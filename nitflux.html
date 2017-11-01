@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        .loginbar {
+            background-color: rgb(167, 78, 0);
+            font-size: 12px;
+            color: white;
+            padding: 4px 7% 4px 7%;
+        }
+
+        .titlebar {
+            background-color: rgb(230, 136, 59);
+            padding: 25px 7% 25px 7%;
+            color: white;
+        }
+
+        .menubar {
+            background-color: rgb(218, 218, 218);
+            padding: 8px 7% 8px 7%;
+        }
+
+        .blog {
+            padding-top: 0%;
+            margin-top: 0%;
+            background-color: white;
+            margin-left: 7%;
+            margin-right: 45%;
+        }
+
+        .categories {
+            left: 60%;
+            right: 0%;
+            top: 150px;
+            margin-right: 7%;
+            padding: 40px;
+            background-color: rgb(230, 190, 82);
+            position: absolute;
+            color: black;
+        }
+
+        .bottombox {
+            background-color: rgb(0, 65, 65);
+            color: darkseagreen;
+            height: 75px;
+            padding: 20px 7% 80px 0px;
+        }
+
+        .bottomleft {
+            position: absolute;
+            left: 7%;
+            right: 60%;
+        }
+
+        .bottommiddle {
+            position: absolute;
+            left: 41%;
+            right: 25%;
+        }
+
+        .bottomright {
+            position: absolute;
+            left: 75%;
+            right: 7%;
+            float: right;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        ul,
+        li {
+            font-size: 12px;
+        }
+
+        blockquote {
+            font-style: normal;
+            font-size: 12px;
+            margin-left: 32px;
+            border-left: 4px solid rgb(45, 129, 45);
+            padding-left: 8px;
+        }
+
+        h1 {
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            color: rgb(58, 57, 57);
+        }
+
+        h6 {
+            padding-top: 0px;
+            margin-top: 0px;
+            padding-bottom: 1px;
+            margin-bottom: 1px;
+        }
+
+        a:link {
+            color: rgb(255, 255, 255);
+        }
+
+        a:visited {
+            color: rgb(255, 255, 255);
+        }
+
+        a.menulink {
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        a.loginlink {
+            color: white-space;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a.loginlink:hover {
+            text-decoration: underline;
+        }
+
+        a.menulink:hover {
+            text-decoration: underline;
+        }
+
+        a.bloglink {
+            color: rgb(45, 129, 45);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.categorielink {
+            font-size: 14px;
+            color: black;
+            text-decoration: none;
+        }
+
+        a.bottomlink {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        a.bottomlink:hover,
+        a:hover,
+        a.bloglink:hover,
+        a.categorielink:hover,
+        a.menulink:hover {
+            text-decoration: underline;
+        }
+
+        a:active,
+        a.bloglink:active,
+        a.categorielink:active,
+        a.menulink:active {
+            color: slateblue;
+            text-decoration: undermine;
+        }
+
+        /* Dropdown Button */
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown button on hover & focus */
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #3e8e41;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loginbar" class="loginbar">
+        Themes:
+        <a href="https://www.pathofexile.com/login">Light</a>
+        <a href="https://www.pathofexile.com/login">Dark</a>
+        <span style="float:right">
+            Welcome to Nitflux!
+            <a href="https://www.pathofexile.com/login">Login</a>
+            <a href="https://www.pathofexile.com/account/create">Sign Up</a>
+        </span>
+    </div>
+
+    <div id="titlebar" class="titlebar">
+        <span style="font-size: 36px">Nitflux&nbsp;</span>
+        </br>
+        <span style="font-size: 16px">A website created to rate and review original Netflix content.</span>
+    </div>
+
+    <div id="menubar" class="menubar">
+        <a href="https://www.homedepot.ca/en/home.html" class="menulink">
+            home</a>
+        &nbsp;&nbsp;&nbsp;&nbsp; 
+        <a href="https://www.mtlblog.com/" class="menulink">
+            titles</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://www.thefreedictionary.com/physical+contact" class="menulink">
+            contact us</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</body>
+
+</html>
