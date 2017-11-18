@@ -7,8 +7,6 @@
     $app = new \Slim\App;
     $app->get('/users','getUsers');
     $app->get('/addComment', 'addComment');
-    $app->get('/showComments', 'showComments');
-    $app-
     $app->run();
 
     // call: localhost/nitflux/addComment (using GET method)
