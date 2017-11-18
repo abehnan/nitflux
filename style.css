@@ -1,0 +1,57 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin: 0;
+}
+
+.loginbar {
+    background-color: rgb(167, 78, 0);
+    font-size: 12px;
+    color: white;
+    padding: 4px 7% 4px 7%;
+}
+
+.titlebar {
+    background-color: rgb(230, 136, 59);
+    padding: 25px 7% 25px 7%;
+    color: white;
+}
+
+.menubar {
+    background-color: rgb(218, 218, 218);
+    padding: 8px 7% 8px 7%;
+}
+
+.blog {
+    padding-top: 0%;
+    margin-top: 0%;
+    background-color: white;
+    margin-left: 7%;
+    margin-right: 45%;
+}
+
+a.menulink {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+a.menulink:visited {
+    color: black;
+}
+
+a.loginlink {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.menulink:hover,
+a.loginlink:hover {
+    text-decoration: underline;
+}
+
+a.menulink:active
+a.loginlink:active {
+    color: slateblue;
+}
