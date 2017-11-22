@@ -50,7 +50,14 @@ function switchDark()
     var body = document.getElementsByClassName('body');
     for(var i = 0, length = body.length; i<length; i++)
     {
-        body[i].style.backgroundColor="black"
+        body[i].style.backgroundColor="black";
+        body[i].style.color="#99ccff";
+    }
+
+    //Main
+    var main = document.getElementsByClassName('main');
+    {
+        main[i].style.backgroundColor="black";
         body[i].style.color="#99ccff";
     }
 };

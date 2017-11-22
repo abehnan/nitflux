@@ -3,13 +3,14 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src ="changestyle.js"></script>
 </head>
 
 <body>
     <div id="loginbar" class="loginbar">
         Themes:
-        <a class="loginlink" href="https://www.pathofexile.com/login">Light</a>
-        <a class="loginlink" href="https://www.pathofexile.com/login">Dark</a>
+        <button type="button" class="mybutton" onclick="switchLight()">Light</button>
+        <button type="button" class="mybutton" onclick="switchDark()">Dark</button>
         <span style="float:right">
             Welcome to Nitflux!
             <a class="loginlink" href="https://www.pathofexile.com/login">Login</a>
@@ -24,19 +25,20 @@
     </div>
 
     <div id="menubar" class="menubar">
-        <a href="https://www.homedepot.ca/en/home.html" class="menulink">
+        <a href="./index.html" class="menulink">
             home</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="https://www.mtlblog.com/" class="menulink">
+        &nbsp;&nbsp;&nbsp;&nbsp; 
+        <a href="./titles.html" class="menulink">
             titles</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="http://www.thefreedictionary.com/physical+contact" class="menulink">
+        <a href="./contact.html" class="menulink">
             contact us</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="http://www.thefreedictionary.com/physical+contact" class="menulink">
-            comments</a>
+        <a href="./comments.php" class="menulink">
+            comments</a> 
         &nbsp;&nbsp;&nbsp;&nbsp;
     </div>
+
     <div id="main" class="main">
         </br>
         </br>
