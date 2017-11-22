@@ -25,19 +25,23 @@
     </div>
 
     <div id="menubar" class="menubar">
-        <a href="./index.html" class="menulink">
-            home</a>
-        &nbsp;&nbsp;&nbsp;&nbsp; 
-        <a href="./titles.html" class="menulink">
-            titles</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="./contact.html" class="menulink">
-            contact us</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="./comments.php" class="menulink">
-            comments</a> 
-        &nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
+    <a href="./index.html" class="menulink">
+        home</a>
+    &nbsp;&nbsp;&nbsp;&nbsp; 
+    <a href="./titles.html" class="menulink">
+        titles</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./genres.html" class="menulink">
+        genres</a> 
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./contact.html" class="menulink">
+        contact us</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./comments.php" class="menulink">
+        comments</a> 
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    
+</div>
 
     <div id="main" class="main">
         </br>
@@ -54,7 +58,7 @@
             </br>
             <input type="text" name="data" style="width: 600px; height: 200px;" maxlength="500">
             </br>
-            <input type="submit" value="Submit">
+            <input type="submit" class="mybutton" value="Submit">
         </form>
         <div id="commentResult">
 

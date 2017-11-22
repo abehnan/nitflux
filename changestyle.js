@@ -43,22 +43,22 @@ function switchDark()
     var bodytext = document.getElementsByClassName('blog');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
-        bodytext[i].style.backgroundColor="black";
+        bodytext[i].style.backgroundColor="#202020";
         bodytext[i].style.color="#99ccff";
     }
 
     var body = document.getElementsByClassName('body');
     for(var i = 0, length = body.length; i<length; i++)
     {
-        body[i].style.backgroundColor="black";
+        body[i].style.backgroundColor="#202020";
         body[i].style.color="#99ccff";
     }
 
     //Main
     var main = document.getElementsByClassName('main');
     {
-        main[i].style.backgroundColor="black";
-        body[i].style.color="#99ccff";
+        main[i].style.backgroundColor="#202020";
+        main[i].style.color="#99ccff";
     }
 };
 
@@ -113,5 +113,12 @@ function switchLight()
     {
         body[i].style.backgroundColor="white"
         body[i].style.color="black";
+    }
+    
+    //Main
+    var main = document.getElementsByClassName('main');
+    {
+        main[i].style.backgroundColor="white";
+        main[i].style.color="black";
     }
 }

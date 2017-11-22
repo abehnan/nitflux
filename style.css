@@ -76,3 +76,11 @@ a.menulink:active
 a.loginlink:active {
     color: slateblue;
 }
+.main{
+    padding-top: 0%;
+    margin-top: 0%;
+    background-color: white;
+    box-sizing: border-box;
+    padding-left: 7%;
+    padding-right: 45%;
+}
