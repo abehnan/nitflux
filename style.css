@@ -25,8 +25,29 @@ body {
     padding-top: 0%;
     margin-top: 0%;
     background-color: white;
-    margin-left: 7%;
-    margin-right: 45%;
+    box-sizing: border-box;
+    padding-left: 7%;
+    padding-right: 45%;
+}
+
+.blogtitle {
+    padding-top: 0%;
+    margin-top: 0%;
+    background-color: #ffd6b3;
+    box-sizing: border-box;
+    padding-left: 7%;
+    padding-right: 45%;
+    font-size: 25px;
+}
+
+
+.mybutton {
+    background-color: rgb(230, 136, 59);
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 10px;
 }
 
 a.menulink {

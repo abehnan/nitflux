@@ -3,13 +3,14 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src ="changestyle.js"></script>
 </head>
 
 <body>
     <div id="loginbar" class="loginbar">
         Themes:
-        <a class="loginlink" href="https://www.pathofexile.com/login">Light</a>
-        <a class="loginlink" href="https://www.pathofexile.com/login">Dark</a>
+        <button type="button" class="mybutton" onclick="switchLight()">Light</button>
+        <button type="button" class="mybutton" onclick="switchDark()">Dark</button>
         <span style="float:right">
             Welcome to Nitflux!
             <a class="loginlink" href="https://www.pathofexile.com/login">Login</a>
@@ -24,18 +25,42 @@
     </div>
 
     <div id="menubar" class="menubar">
-        <a href="https://www.homedepot.ca/en/home.html" class="menulink">
+        <a href="/index.html" class="menulink">
             home</a>
         &nbsp;&nbsp;&nbsp;&nbsp; 
-        <a href="https://www.mtlblog.com/" class="menulink">
+        <a href="/titles.html" class="menulink">
             titles</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="http://www.thefreedictionary.com/physical+contact" class="menulink">
+        <a href="contact.html" class="menulink">
             contact us</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="http://localhost/nitflux/comments.php" class="menulink">
+        <a href="ourcomments.html" class="menulink">
             comments</a> 
         &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="bodys" class="blogtitle">
+        Welcome To NitFlux!
+    </div>
+
+    <div id="body" class="blog">
+            A space to independently review Netflix content!
+    </div>
+
+    <div id="bodys" class="blogtitle" style="font-size:20px;">
+            Who are we?
+        </div>
+    <div id="body" class="blog">
+            A trio of McGill University students who consume obscene amounts of Netflix movies, and television.
+    </div>
+    <div id="bodys" class="blogtitle" style="font-size:20px;">
+            Why are you doing this?
+    </div>
+    <div class="blog">
+            In early 2017 NetFlix decided to dump its star based rating scheme for a simple would or would 
+            not reccomend. This lead to a complete overhaul in not only the reccomendation algorithmns, 
+            but also how users chose which shows or movies to watch. Here we wish to provide a space to 
+            Netflix lovers to rate review content independtly from nextlix and in the previous style.
     </div>
 </body>
 
