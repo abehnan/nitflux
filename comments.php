@@ -85,10 +85,13 @@
         ?>
     <br><br>
         <form action="http://localhost/nitflux/populateGenreTable" method="get">
-            <input type="submit" value="Genre Table">
+            <input type="submit" value="Populate Genre Table">
+        </form>
+
+        <form action="http://localhost/nitflux/populateActorTable" method="get">
+            <input type="submit" value="Populate Actor Table">
         </form>
     </div>
-
 </body>
 
 </html>

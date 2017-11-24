@@ -7,7 +7,8 @@
     $app = new \Slim\App;
     $app->get('/users','getUsers');
     $app->get('/addComment', 'addComment');
-    $app->get('/createGenreTable', 'createGenreTable');
+    $app->get('/populateGenreTable', 'populateGenreTable');
+    $app->get('/populateActorTable', 'populateActorTable');
     $app->run();
 
     // call: localhost/nitflux/addComment (using GET method)
@@ -26,7 +27,8 @@
         }
     }
 
-    function createGenreTable(Request $request) {
+    function populateGenreTable(Request $request) {
+        // connect to db and query all movie names and genres from table movies
         try {
             $db = getDB();
             $sql = "SELECT name,genres FROM movies";
@@ -35,17 +37,54 @@
             echo '{"error":{"text":'. $e->getMessage() .'}}';
         }
         foreach ($stmt as $row) {
-            $name = addslashes($row['name']);
+            // add slashes for special characters
+            $movie = addslashes($row['name']);
+            // transform string containing comma seperated values into array
             $genres = explode(",",$row['genres']);
             foreach($genres as $g) {
                 if (!empty($g)) {
+                    // add slashes for special characters
                     $genre = addslashes($g);
-                    $sql = "INSERT INTO genres (genre, movie) VALUE('$genre', '$name')";
+                    $sql = "INSERT INTO genres (genre, movie) VALUE('$genre', '$movie')";
+                    // insert new values into genre table
+                    echo "Executing: " . $sql . "...<br>";
                     try {
                         $db->query($sql);
                     } catch(PDOException $e) {
-                        echo '{"error":{"text":'. $e->getMessage() .'}} <br><br>';
-                    }
+                        echo 'Error: '. $e->getMessage() .'<br>';
+                    } 
+                } 
+            }
+        }
+        $db = null;        
+    }
+
+    function populateActorTable(Request $request) {
+        // connect to db and query all movie names and genres from table movies
+        try {
+            $db = getDB();
+            $sql = "SELECT name,actors FROM movies";
+            $stmt = $db->query($sql);
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+        foreach ($stmt as $row) {
+            // add slashes for special characters
+            $movie = addslashes($row['name']);
+            // transform string containing comma seperated values into array
+            $actors = explode(",",$row['actors']);
+            foreach($actors as $a) {
+                if (!empty($a)) {
+                    // add slashes for special characters
+                    $actor = addslashes($a);
+                    $sql = "INSERT INTO actors (actor, movie) VALUE('$actor', '$movie')";
+                    // insert new values into genre table
+                    echo "Executing: " . $sql . "...<br>";
+                    try {
+                        $db->query($sql);
+                    } catch(PDOException $e) {
+                        echo 'Error: '. $e->getMessage() .'<br>';
+                    } 
                 } 
             }
         }
