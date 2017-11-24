@@ -28,7 +28,7 @@
     <a href="./index.html" class="menulink">
         home</a>
     &nbsp;&nbsp;&nbsp;&nbsp; 
-    <a href="./titles.html" class="menulink">
+    <a href="./titles.php" class="menulink">
         titles</a>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="./genres.html" class="menulink">

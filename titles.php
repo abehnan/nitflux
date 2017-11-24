@@ -28,7 +28,7 @@
             <a href="./index.html" class="menulink">
                 home</a>
             &nbsp;&nbsp;&nbsp;&nbsp; 
-            <a href="./titles.html" class="menulink">
+            <a href="./titles.php" class="menulink">
                 titles</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="./comments.php" class="menulink">
@@ -42,3 +42,28 @@
             &nbsp;&nbsp;&nbsp;&nbsp;
             
         </div>
+
+    <div id="titles" class="blog">
+        <h1>Titles</h1>
+        <ul>
+        <?php
+            require 'db.php';
+            // print out all of the current ratings in html format
+            // connect to db and query all movie names and genres from table movies
+            try {
+                $db = getDB();
+                $sql = "SELECT name FROM movies";
+                $stmt = $db->query($sql);
+            } catch(PDOException $e) {
+                echo '{"error":{"text":'. $e->getMessage() .'}}';
+            }
+            foreach ($stmt as $row) {
+                $movie = $row['name'];
+                // add slashes for special characters
+                // transform string containing comma seperated values into array
+                echo "<li><a href='http://google.ca'>$movie</a></li>";
+            }
+            $db = null;        
+        ?>
+        </ul>
+    </div>
