@@ -83,6 +83,10 @@
                 echo '{"error":{"text":'. $e->getMessage() .'}}';
             }
         ?>
+    <br><br>
+        <form action="http://localhost/nitflux/populateGenreTable" method="get">
+            <input type="submit" value="Genre Table">
+        </form>
     </div>
 
 </body>

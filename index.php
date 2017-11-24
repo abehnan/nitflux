@@ -7,6 +7,7 @@
     $app = new \Slim\App;
     $app->get('/users','getUsers');
     $app->get('/addComment', 'addComment');
+    $app->get('/createGenreTable', 'createGenreTable');
     $app->run();
 
     // call: localhost/nitflux/addComment (using GET method)
@@ -23,6 +24,32 @@
         } catch(PDOException $e) {
             echo 'Invalid comment';
         }
+    }
+
+    function createGenreTable(Request $request) {
+        try {
+            $db = getDB();
+            $sql = "SELECT name,genres FROM movies";
+            $stmt = $db->query($sql);
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+        foreach ($stmt as $row) {
+            $name = addslashes($row['name']);
+            $genres = explode(",",$row['genres']);
+            foreach($genres as $g) {
+                if (!empty($g)) {
+                    $genre = addslashes($g);
+                    $sql = "INSERT INTO genres (genre, movie) VALUE('$genre', '$name')";
+                    try {
+                        $db->query($sql);
+                    } catch(PDOException $e) {
+                        echo '{"error":{"text":'. $e->getMessage() .'}} <br><br>';
+                    }
+                } 
+            }
+        }
+        $db = null;        
     }
 
 ?>
