@@ -73,7 +73,7 @@
             // print out all of the current ratings in html format
             try {
                 $db = getDB();
-                $sqlSelect = "SELECT reviewer,rating,data FROM Comments";
+                $sqlSelect = "SELECT name,rating,comment FROM reviews";
                 $stmt = $db->query($sqlSelect);
                 
                 $comments = $stmt->fetchAll(PDO::FETCH_OBJ);

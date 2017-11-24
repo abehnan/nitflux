@@ -16,7 +16,7 @@
         try {
             $db = getDB();
             $userInput = $request->getQueryParams();
-            $sqlInsert = "INSERT INTO Comments(reviewer, rating, data) VALUES ('" . $userInput['reviewer'] . "','" . $userInput['rating'] . "','" . $userInput['data'] . "')";
+            $sqlInsert = "INSERT INTO reviews(name, rating, comment) VALUES ('" . $userInput['reviewer'] . "','" . $userInput['rating'] . "','" . $userInput['data'] . "')";
             $stmt = $db->prepare($sqlInsert);
             $stmt->execute();
             $db = null;
