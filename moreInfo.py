@@ -30,6 +30,7 @@ with open("jsonEntries.txt", 'r') as source:
             genres = soup.find("span", { "class" : "genre-list" })
             if (genres != None):
                 genres = genres.text
+        # print counter to show progress
             print x
             x += 1
             dct = {"year":year, "rating":rating, "duration":duration,
