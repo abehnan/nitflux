@@ -1,17 +1,25 @@
 from bs4 import BeautifulSoup
 import urllib
 import json
+
+#   Uses jsonEntries to visit specific site of every
+#   Netflix title recorded, to get as much descriptive
+#   data as possible
+
+
 x=1
 with open("jsonEntries.txt", 'r') as source:
     with open('allInfo.json', 'w') as dest:
 
-    # one film at a time
+    # one film per line
         for line in source:
             entry = json.loads(line)
             page = entry['page']
             siteHtml = urllib.urlopen(page)
             soup = BeautifulSoup(siteHtml, "html.parser")
 
+    # Lots of checking for nulls because not every film had
+    # the same info fields.
             year = soup.find("span", { "class" : "year" })
             if (year != None):
                 year = year.text
@@ -30,7 +38,10 @@ with open("jsonEntries.txt", 'r') as source:
             genres = soup.find("span", { "class" : "genre-list" })
             if (genres != None):
                 genres = genres.text
-        # print counter to show progress
+
+    # This is long but only needs to happen when updating our info
+    # The counter is to show progress over the time it takes to
+    # handle the ~400 entries.
             print x
             x += 1
             dct = {"year":year, "rating":rating, "duration":duration,
