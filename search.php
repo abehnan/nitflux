@@ -6,7 +6,7 @@
   <script src ="changestyle.js"></script>
 </head>
 
-<body>
+<body onload="checkCookie()">
   <div id="loginbar" class="loginbar">
     Themes:
     <button type="button" class="mybutton" onclick="switchLight()">Light</button>

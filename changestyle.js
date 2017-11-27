@@ -1,5 +1,50 @@
+function setCookie(cTheme, cValue, cExpiry)
+{
+    var d = new Date();
+    d.setTime(d.getTime() + (cExpiry*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cTheme + "=" + cValue + ";" + expires + ";path=/";
+    //document.cookie = cTheme + "=" + cValue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname)
+{
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie()
+{
+    var user=getCookie("theme");
+   
+    if (user == "dark")
+    {
+        
+        switchDark();
+    }
+    else if(user == "light")
+    {
+        
+        switchLight();
+    }
+    else 
+    {switchLight();}
+}
+
 function switchDark()
 {
+    
     //Change color of top login bar 
     document.getElementById('loginbar').style.backgroundColor="#202020";
     document.getElementById('loginbar').style.color="#99ccff";
@@ -55,15 +100,17 @@ function switchDark()
     }
 
     //Main
-    var main = document.getElementsByClassName('main');
-    {
-        main[i].style.backgroundColor="#202020";
-        main[i].style.color="#99ccff";
-    }
+    // var main = document.getElementsByClassName('main');
+    // {
+    //     main[i].style.backgroundColor="#202020";
+    //     main[i].style.color="#99ccff";
+    // }
+    setCookie("theme", "dark", 2);
 };
 
 function switchLight()
 {
+    setCookie("theme", "light", 2);
     //Change color of top login bar 
     document.getElementById('loginbar').style.backgroundColor="rgb(167, 78, 0)";
     document.getElementById('loginbar').style.color="white";
@@ -115,10 +162,10 @@ function switchLight()
         body[i].style.color="black";
     }
     
-    //Main
+    /*Main
     var main = document.getElementsByClassName('main');
     {
-        main[i].style.backgroundColor="white";
+        //main[i].style.backgroundColor="white";
         main[i].style.color="black";
-    }
+    }*/
 }
