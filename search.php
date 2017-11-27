@@ -49,7 +49,7 @@
             }
           ?>
 
-          <!-- <ul> -->
+          <ul>
             <?php
               require 'db.php';
                 // print out all of the current ratings in html format
@@ -75,18 +75,19 @@
                   $movie = $row['name'];
                   // add slashes for special characters
                   // transform string containing comma seperated values into array
-                  echo "
-                  <form method=\"get\" action=\"./entry.php\">
-                  <input type=\"hidden\" name=\"title\" value=\"$movie\">
-                  <input type=\"submit\" name=\"submit\" value=\"$movie\">
-                  </form>
-                  ";
-                  echo "</br>";
+                  // echo "
+                  // <form method=\"get\" action=\"./entry.php\">
+                  // <input type=\"hidden\" name=\"title\" value=\"$movie\">
+                  // <input type=\"submit\" name=\"submit\" value=\"$movie\">
+                  // </form>
+                  // ";
+                  $urlMovie = urlencode($movie);
+                  echo "<li><a href=\"http://localhost/nitflux/entry.php?movie=" . $urlMovie . "\">" .  $movie . "</a></li>";
                 }
                 $db = null;
             
             ?>
-          <!-- </ul>   -->
+          </ul>  
         </div>
       </body>
       </html>

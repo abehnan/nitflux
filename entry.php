@@ -36,9 +36,9 @@
   <div class="blog">
       <?php
       require 'db.php';
-      if(isset($_GET['submit']))
+      if(isset($_GET['movie']))
       {
-        $movie = $_GET["title"];
+        $movie = $_GET["movie"];
         $movie = addslashes($movie);
         try {
           $db = getDB();
