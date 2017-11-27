@@ -27,20 +27,20 @@
     <div id="menubar" class="menubar">
     <a href="./index.html" class="menulink">
         home</a>
-    &nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="./titles.php" class="menulink">
         titles</a>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="./genres.html" class="menulink">
-        genres</a> 
+        genres</a>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="./contact.html" class="menulink">
-        contact us</a>
+    <a href="./about.html" class="menulink">
+        about us</a>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="./comments.php" class="menulink">
-        comments</a> 
+        comments</a>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    
+
 </div>
 
     <div id="main" class="main">
@@ -75,7 +75,7 @@
                 $db = getDB();
                 $sqlSelect = "SELECT name,rating,comment FROM reviews";
                 $stmt = $db->query($sqlSelect);
-                
+
                 $comments = $stmt->fetchAll(PDO::FETCH_OBJ);
                 $db = null;
                 echo  json_encode($comments);

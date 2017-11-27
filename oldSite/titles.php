@@ -27,20 +27,20 @@
     <div id="menubar" class="menubar">
             <a href="./index.html" class="menulink">
                 home</a>
-            &nbsp;&nbsp;&nbsp;&nbsp; 
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="./titles.php" class="menulink">
                 titles</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="./comments.php" class="menulink">
-                genres</a> 
+                genres</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="./contact.html" class="menulink">
-                contact us</a>
+            <a href="./about.html" class="menulink">
+                about us</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="./comments.php" class="menulink">
-                comments</a> 
+                comments</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            
+
         </div>
 
     <div id="titles" class="blog">
@@ -63,7 +63,7 @@
                 // transform string containing comma seperated values into array
                 echo "<li><a href='http://google.ca'>$movie</a></li>";
             }
-            $db = null;        
+            $db = null;
         ?>
         </ul>
     </div>
