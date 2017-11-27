@@ -28,13 +28,20 @@
             $stmt = $db->prepare($sqlInsert);
             $stmt->execute();
             $db = null;
+            $movie = print_r($userInput['movie'], true);
+            // $htmlFormatMovie = htmlentities($userInput['movie']);
+            $urlMovieName = urlencode($movie);
 
-            $htmlFormatMovie = htmlentities($userInput['movie']);
-            // echo $userInput['movie'];
+            //debug
+            // echo '$userInput[movie]: ' . $userInput['movie'];
             // echo "</br>";
-            // echo $htmlFormatMovie;
+            // echo '$htmlFormatMovie: ' . $htmlFormatMovie;
+            // echo "</br>";
+            // echo  'urlencode($movie): ' . urlencode($movie);
+
+            // redirect to the page that called the function
             ob_start();
-            header('Location: http://localhost/nitflux/entry.php?title=' . $htmlFormatMovie . "&submit=" . $htmlFormatMovie);
+            header('Location: http://localhost/nitflux/entry.php?title=' . $urlMovieName . "&submit=" . $urlMovieName);
             ob_end_flush();
             die();
         } catch(PDOException $e) {
