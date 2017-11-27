@@ -55,8 +55,8 @@
               // add slashes for special characters
               // transform string containing comma seperated values into array
               echo "<li>
-              <form method=\"post\" action=\"./entry.php\">
-              <input type=\"hidden\" name=\"title\" value=\"$movie\">
+              <form method=\"get\" action=\"./entry.php\">
+               <input type=\"hidden\" name=\"title\" value=\"$movie\">
               <input type=\"submit\" name=\"submit\" value=\"$movie\">
               </form>
               </li>";

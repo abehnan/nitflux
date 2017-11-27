@@ -18,12 +18,27 @@
         try {
             $db = getDB();
             $userInput = $request->getQueryParams();
-            $sqlInsert = "INSERT INTO reviews(name, rating, comment) VALUES ('" . $userInput['reviewer'] . "','" . $userInput['rating'] . "','" . $userInput['data'] . "')";
+            $sqlInsert = 
+                "INSERT INTO reviews(name, rating, comment, movie) VALUES ('" .
+                $userInput['reviewer'] . "','" .
+                $userInput['rating'] . "','" . 
+                $userInput['data'] . "','" . 
+                $userInput['movie'] . "')";
+
             $stmt = $db->prepare($sqlInsert);
             $stmt->execute();
             $db = null;
+
+            $htmlFormatMovie = htmlentities($userInput['movie']);
+            // echo $userInput['movie'];
+            // echo "</br>";
+            // echo $htmlFormatMovie;
+            ob_start();
+            header('Location: http://localhost/nitflux/entry.php?title=' . $htmlFormatMovie . "&submit=" . $htmlFormatMovie);
+            ob_end_flush();
+            die();
         } catch(PDOException $e) {
-            echo 'Invalid comment';
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
         }
     }
 

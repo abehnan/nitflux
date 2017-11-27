@@ -36,9 +36,10 @@
 
       <?php
       require 'db.php';
-      if(isset($_POST['submit']))
+      if(isset($_GET['submit']))
       {
-        $movie = $_POST["title"];
+        $movie = $_GET["title"];
+        $movie = addslashes($movie);
         try {
           $db = getDB();
           $sql = "SELECT * FROM movies WHERE name='$movie'";
@@ -75,17 +76,35 @@
 
       <strong>Enter your comment below:</strong>
     </br></br>
-    <form name="comment" action="http://localhost/nitflux/addComment" method="get" style="font-weight: bold;">
-      Name: &nbsp;
-      <input type="text" name="reviewer" maxlength="16">
+    <?php 
+      echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\" method=\"get\" style=\"font-weight: bold;\">";
+      echo "<input type=\"hidden\" name=\"movie\" value=$movie>";
+      echo "Name: &nbsp;";
+      echo "<input type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
+      echo "</br>";
+      echo "Rating: &nbsp;";
+      echo "<input type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
+      echo "</br>";
+      echo "<input type=\"text\" name=\"data\" style=\"width: 600px; height: 200px;\" maxlength=\"500\" required>";
+      echo "</br>";
+      echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
+      echo "</form>"
+    ?>
+
+    <!-- <form name="comment" action="http://localhost/nitflux/addComment" method="get" style="font-weight: bold;">
+    <input type="hidden" value=$movie>
+    Name: &nbsp;
+    <input type="text" name="reviewer" maxlength="16">
     </br>
     Rating: &nbsp;
     <input type="text" name="rating" maxlength="2"> / 10
-  </br>
-  <input type="text" name="data" style="width: 600px; height: 200px;" maxlength="500">
-</br>
-<input type="submit" class="mybutton" value="Submit">
-</form>
+    </br>
+    <input type="text" name="data" style="width: 600px; height: 200px;" maxlength="500">
+    </br>
+    <input type="submit" class="mybutton" value="Submit">
+    </form> -->
+
+
 <div id="commentResult">
 
 </div>
