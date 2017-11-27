@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2017 at 12:07 AM
+-- Generation Time: Nov 28, 2017 at 12:50 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -30,14 +30,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `actors` (
   `actor` varchar(48) NOT NULL,
-  `movie` varchar(100) NOT NULL
+  `name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `actors`
 --
 
-INSERT INTO `actors` (`actor`, `movie`) VALUES
+INSERT INTO `actors` (`actor`, `name`) VALUES
 (' A-ra Go', 'Black'),
 (' A.J. LoCascio', 'Dawn of the Croods'),
 (' Aaron Carpenter', 'Chasing Cameron'),
@@ -1063,16 +1063,16 @@ INSERT INTO `actors` (`actor`, `movie`) VALUES
 
 CREATE TABLE `genres` (
   `genre` varchar(48) NOT NULL,
-  `movie` varchar(48) NOT NULL
+  `name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `genres`
 --
 
-INSERT INTO `genres` (`genre`, `movie`) VALUES
+INSERT INTO `genres` (`genre`, `name`) VALUES
 (' ', 'Deidra & Laney Rob a Train'),
-(' ', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+(' ', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' ', 'The Incredible Jessica James'),
 (' ', 'Win It All'),
 (' 20th Century Period Pieces', '1922'),
@@ -1087,7 +1087,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Action Thrillers', 'Wheelman'),
 (' Adult Animation', 'Big Mouth'),
 (' Adult Animation', 'BoJack Horseman'),
-(' Adult Animation', 'BoJack Horseman Christmas Special: Sabrina\'s Chr'),
+(' Adult Animation', 'BoJack Horseman Christmas Special: Sabrina\'s Christmas Wish'),
 (' Adult Animation', 'F is for Family'),
 (' Adult Animation', 'Neo Yokio'),
 (' Adult Animation', 'Pacific Heat'),
@@ -1217,7 +1217,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' British TV Shows', 'The Worst Witch'),
 (' British TV Shows', 'White Gold'),
 (' Canadian Comedies', 'Swearnet Live'),
-(' Canadian Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: L'),
+(' Canadian Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: Live In Austin'),
 (' Canadian TV Shows', 'The Magic School Bus Rides Again'),
 (' Canadian TV Shows', 'Trailer Park Boys'),
 (' Canadian TV Shows', 'Trailer Park Boys Live at the North Pole'),
@@ -1257,7 +1257,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Comedies', 'El Especial de Alex Fernndez, el Especial'),
 (' Comedies', 'Fabrizio Copano: Solo pienso en mi'),
 (' Comedies', 'Felipe Neto: My Life Makes No Sense'),
-(' Comedies', 'Gabriel lglesias: Im Sorry For What I Said When '),
+(' Comedies', 'Gabriel lglesias: Im Sorry For What I Said When I Was Hungry'),
 (' Comedies', 'Gad Gone Wild'),
 (' Comedies', 'Grillo vs Grillo'),
 (' Comedies', 'Hannibal Buress: Comedy Camisado'),
@@ -1268,8 +1268,8 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Comedies', 'Jack Whitehall: At Large'),
 (' Comedies', 'Jandino: Whatever it Takes'),
 (' Comedies', 'Jeff Dunham: Relative Disaster'),
-(' Comedies', 'Jeff Foxworthy and Larry the Cable Guy: Weve Bee'),
-(' Comedies', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fin'),
+(' Comedies', 'Jeff Foxworthy and Larry the Cable Guy: Weve Been Thinking...'),
+(' Comedies', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fine)'),
 (' Comedies', 'Jen Kirkman: Just Keep Livin?'),
 (' Comedies', 'Jerry Before Seinfeld'),
 (' Comedies', 'Jim Gaffigan: Cinco'),
@@ -1282,7 +1282,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Comedies', 'Joe Mandes Award-Winning Comedy Special'),
 (' Comedies', 'Joe Rogan: Triggered'),
 (' Comedies', 'John Mulaney: The Comeback Kid'),
-(' Comedies', 'Judah Friedlander: America Is the Greatest Count'),
+(' Comedies', 'Judah Friedlander: America Is the Greatest Country in the United States'),
 (' Comedies', 'Katherine Ryan: In Trouble'),
 (' Comedies', 'Louis C.K. 2017'),
 (' Comedies', 'Lucas Brothers: On Drugs'),
@@ -1291,7 +1291,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Comedies', 'Marco Luque: Tamo Junto'),
 (' Comedies', 'Maria Bamford: Old Baby'),
 (' Comedies', 'Maz Jobrani: Immigrant'),
-(' Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+(' Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' Comedies', 'Michael Che Matters'),
 (' Comedies', 'Mike Birbiglia: Thank God for Jokes'),
 (' Comedies', 'Mike Epps: Don\'t Take It Personal'),
@@ -1320,7 +1320,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Comedies', 'Theo Von: No Offense'),
 (' Comedies', 'Tom Segura: Mostly Stories'),
 (' Comedies', 'Tracy Morgan: Staying Alive'),
-(' Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: L'),
+(' Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: Live In Austin'),
 (' Comedies', 'Trevor Noah: Afraid of the Dark'),
 (' Comedies', 'True Memoirs of an International Assassin'),
 (' Comedies', 'Vir Das: Abroad Understanding'),
@@ -1422,7 +1422,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Dark Comedies', 'Handsome: A Netflix Mystery Movie'),
 (' Dark Comedies', 'Hannibal Buress: Comedy Camisado'),
 (' Dark Comedies', 'I\'m Brent Morin'),
-(' Dark Comedies', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fin'),
+(' Dark Comedies', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fine)'),
 (' Dark Comedies', 'Jen Kirkman: Just Keep Livin?'),
 (' Dark Comedies', 'Jim Jefferies : BARE'),
 (' Dark Comedies', 'Jim Jefferies: Freedumb'),
@@ -1456,7 +1456,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Dark Comedies', 'Theo Von: No Offense'),
 (' Dark Comedies', 'Tom Segura: Mostly Stories'),
 (' Dark Comedies', 'Tracy Morgan: Staying Alive'),
-(' Dark Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: L'),
+(' Dark Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: Live In Austin'),
 (' Dark Comedies', 'War Machine'),
 (' Documentaries', 'Abstract: The Art of Design'),
 (' Documentaries', 'Captive'),
@@ -1622,7 +1622,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' International Comedies', 'Salvador Martinha - Tip of the Tongue'),
 (' International Comedies', 'Simplemente Manu NNa'),
 (' International Comedies', 'Slam'),
-(' International Comedies', 'The 101-Year-Old Man Who Skipped Out on the Bill'),
+(' International Comedies', 'The 101-Year-Old Man Who Skipped Out on the Bill and Disappeared'),
 (' International Dramas', '7 aos'),
 (' International Dramas', 'Divines'),
 (' International Dramas', 'In the Shadow of Iris'),
@@ -1640,7 +1640,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' International Movies', 'Lucid Dream'),
 (' International Movies', 'Mercenary'),
 (' International Movies', 'Sand Storm'),
-(' International Movies', 'The 101-Year-Old Man Who Skipped Out on the Bill'),
+(' International Movies', 'The 101-Year-Old Man Who Skipped Out on the Bill and Disappeared'),
 (' International Movies', 'The Square'),
 (' International Movies', 'Winter on Fire: Ukraine\'s Fight for Freedom'),
 (' International Thrillers', 'In the Shadow of Iris'),
@@ -1714,9 +1714,9 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Korean TV Shows', 'The Sound of Your Heart'),
 (' Korean TV Shows', 'White Nights'),
 (' Late Night Comedies', 'Brahman Naman'),
-(' Late Night Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+(' Late Night Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' Late Night Comedies', 'The Do-Over'),
-(' Late Night Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: L'),
+(' Late Night Comedies', 'Trailer Park Boys: Drunk, High and Unemployed: Live In Austin'),
 (' Latin American Movies', 'Laerte-se'),
 (' Latino Comedies', 'Fabrizio Copano: Solo pienso en mi'),
 (' LGBTQ Comedies', 'Simplemente Manu NNa'),
@@ -1745,7 +1745,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Mockumentaries', 'Trailer Park Boys'),
 (' Mockumentaries', 'Trailer Park Boys Live at the North Pole'),
 (' Mockumentaries', 'Trailer Park Boys Live In F**kin\' Dublin'),
-(' Mockumentaries', 'Trailer Park Boys: Drunk, High and Unemployed: L'),
+(' Mockumentaries', 'Trailer Park Boys: Drunk, High and Unemployed: Live In Austin'),
 (' Mockumentaries', 'Trailer Park Boys: Out of the Park: Europe'),
 (' Movies for ages 11 to 12', 'Coin Heist'),
 (' Movies for ages 11 to 12', 'Pee-wee\'s Big Holiday'),
@@ -1762,7 +1762,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Music', 'Gaga: Five Foot Two'),
 (' Music', 'I\'ll Sleep When I\'m Dead'),
 (' Music', 'Keith Richards: Under the Influence'),
-(' Music', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+(' Music', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' Music', 'The Other One: The Long Strange Trip of Bob Weir'),
 (' Music & Concert Documentaries', 'Gaga: Five Foot Two'),
 (' Music & Concert Documentaries', 'I\'ll Sleep When I\'m Dead'),
@@ -1790,14 +1790,14 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Political Comedies', 'Dieter Nuhr: Nuhr in Berlin'),
 (' Political Comedies', 'Grillo vs Grillo'),
 (' Political Comedies', 'Jeff Dunham: Relative Disaster'),
-(' Political Comedies', 'Judah Friedlander: America Is the Greatest Count'),
+(' Political Comedies', 'Judah Friedlander: America Is the Greatest Country in the United States'),
 (' Political Comedies', 'Lucas Brothers: On Drugs'),
 (' Political Comedies', 'Maz Jobrani: Immigrant'),
 (' Political Comedies', 'Patton Oswalt: Annihilation'),
 (' Political Comedies', 'Patton Oswalt: Talking for Clapping'),
 (' Political Comedies', 'Rory Scovel Tries Stand-Up for the First Time'),
 (' Political Comedies', 'Sarah Silverman A Speck of Dust'),
-(' Political Comedies', 'The 101-Year-Old Man Who Skipped Out on the Bill'),
+(' Political Comedies', 'The 101-Year-Old Man Who Skipped Out on the Bill and Disappeared'),
 (' Political Comedies', 'Trevor Noah: Afraid of the Dark'),
 (' Political Comedies', 'War Machine'),
 (' Political Documentaries', 'E-Team'),
@@ -1829,7 +1829,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Rock & Pop Concerts', 'Keith Richards: Under the Influence'),
 (' Rock & Pop Concerts', 'The Other One: The Long Strange Trip of Bob Weir'),
 (' Rockumentaries', 'I\'ll Sleep When I\'m Dead'),
-(' Romantic Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+(' Romantic Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' Romantic Comedies', 'Naked'),
 (' Romantic Comedies', 'The Incredible Jessica James'),
 (' Romantic Comedies', 'Win It All'),
@@ -1853,9 +1853,9 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Satires', 'Nick Offerman: American Ham'),
 (' Satires', 'Okja'),
 (' Satires', 'Special Correspondents'),
-(' Satires', 'The 101-Year-Old Man Who Skipped Out on the Bill'),
+(' Satires', 'The 101-Year-Old Man Who Skipped Out on the Bill and Disappeared'),
 (' Satires', 'The Ridiculous 6'),
-(' Scandinavian Mo', 'The 101-Year-Old Man Who Skipped Out on the Bill'),
+(' Scandinavian Mo', 'The 101-Year-Old Man Who Skipped Out on the Bill and Disappeared'),
 (' Sci-Fi & ', 'Lucid Dream'),
 (' Sci-Fi & Fan', 'BLAME!'),
 (' Sci-Fi & Fantas', 'Spectral'),
@@ -1875,7 +1875,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Science & Technology Docuseries', 'White Rabbit Project'),
 (' Sitcoms', 'Arrested Development'),
 (' Sitcoms', 'BoJack Horseman'),
-(' Sitcoms', 'BoJack Horseman Christmas Special: Sabrina\'s Chr'),
+(' Sitcoms', 'BoJack Horseman Christmas Special: Sabrina\'s Christmas Wish'),
 (' Sitcoms', 'Crashing'),
 (' Sitcoms', 'Cuckoo'),
 (' Sitcoms', 'Disjointed'),
@@ -1983,7 +1983,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Stand-up Comedy', 'Doug Benson: Doug Dynasty'),
 (' Stand-up Comedy', 'El Especial de Alex Fernndez, el Especial'),
 (' Stand-up Comedy', 'Felipe Neto: My Life Makes No Sense'),
-(' Stand-up Comedy', 'Gabriel lglesias: Im Sorry For What I Said When '),
+(' Stand-up Comedy', 'Gabriel lglesias: Im Sorry For What I Said When I Was Hungry'),
 (' Stand-up Comedy', 'Gad Gone Wild'),
 (' Stand-up Comedy', 'Grillo vs Grillo'),
 (' Stand-up Comedy', 'Hannibal Buress: Comedy Camisado'),
@@ -1994,8 +1994,8 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Stand-up Comedy', 'Jack Whitehall: At Large'),
 (' Stand-up Comedy', 'Jandino: Whatever it Takes'),
 (' Stand-up Comedy', 'Jeff Dunham: Relative Disaster'),
-(' Stand-up Comedy', 'Jeff Foxworthy and Larry the Cable Guy: Weve Bee'),
-(' Stand-up Comedy', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fin'),
+(' Stand-up Comedy', 'Jeff Foxworthy and Larry the Cable Guy: Weve Been Thinking...'),
+(' Stand-up Comedy', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fine)'),
 (' Stand-up Comedy', 'Jen Kirkman: Just Keep Livin?'),
 (' Stand-up Comedy', 'Jerry Before Seinfeld'),
 (' Stand-up Comedy', 'Jim Gaffigan: Cinco'),
@@ -2008,7 +2008,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' Stand-up Comedy', 'Joe Mandes Award-Winning Comedy Special'),
 (' Stand-up Comedy', 'Joe Rogan: Triggered'),
 (' Stand-up Comedy', 'John Mulaney: The Comeback Kid'),
-(' Stand-up Comedy', 'Judah Friedlander: America Is the Greatest Count'),
+(' Stand-up Comedy', 'Judah Friedlander: America Is the Greatest Country in the United States'),
 (' Stand-up Comedy', 'Katherine Ryan: In Trouble'),
 (' Stand-up Comedy', 'Louis C.K. 2017'),
 (' Stand-up Comedy', 'Lucas Brothers: On Drugs'),
@@ -2107,7 +2107,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' TV Animated Comedies', 'All Hail King Julien: Exiled'),
 (' TV Animated Comedies', 'Big Mouth'),
 (' TV Animated Comedies', 'BoJack Horseman'),
-(' TV Animated Comedies', 'BoJack Horseman Christmas Special: Sabrina\'s Chr'),
+(' TV Animated Comedies', 'BoJack Horseman Christmas Special: Sabrina\'s Christmas Wish'),
 (' TV Animated Comedies', 'Buddy Thunderstruck'),
 (' TV Animated Comedies', 'Buddy Thunderstruck: The Maybe Pile'),
 (' TV Animated Comedies', 'F is for Family'),
@@ -2171,7 +2171,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' TV Comedies', 'Atypical'),
 (' TV Comedies', 'Big Mouth'),
 (' TV Comedies', 'BoJack Horseman'),
-(' TV Comedies', 'BoJack Horseman Christmas Special: Sabrina\'s Chr'),
+(' TV Comedies', 'BoJack Horseman Christmas Special: Sabrina\'s Christmas Wish'),
 (' TV Comedies', 'Buddy Thunderstruck'),
 (' TV Comedies', 'Buddy Thunderstruck: The Maybe Pile'),
 (' TV Comedies', 'Chelsea'),
@@ -2196,16 +2196,16 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' TV Comedies', 'Good Morning Call'),
 (' TV Comedies', 'Grace and Frankie'),
 (' TV Comedies', 'Haters Back Off'),
-(' TV Comedies', 'Home: Adventures with Tip & Oh'),
+(' TV Comedies', 'Home: Adventures with Tip & Oh');
+INSERT INTO `genres` (`genre`, `name`) VALUES
 (' TV Comedies', 'Jack Whitehall: Travels with My Father'),
 (' TV Comedies', 'Lady Dynamite'),
 (' TV Comedies', 'Lilyhammer'),
 (' TV Comedies', 'Love'),
 (' TV Comedies', 'Lovesick'),
 (' TV Comedies', 'Mako Mermaids: An H2O Adventure'),
-(' TV Comedies', 'Master of None');
-INSERT INTO `genres` (`genre`, `movie`) VALUES
-(' TV Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+(' TV Comedies', 'Master of None'),
+(' TV Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' TV Comedies', 'My Only Love Song'),
 (' TV Comedies', 'Mystery Science Theater 3000: The Return'),
 (' TV Comedies', 'Neo Yokio'),
@@ -2367,7 +2367,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 (' TV Sci-Fi & Fantasy', 'The Mist'),
 (' TV Sci-Fi & Fantasy', 'Van Helsing'),
 (' TV Shows', 'Abstract: The Art of Design'),
-(' TV Sketch Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+(' TV Sketch Comedies', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' TV Sketch Comedies', 'Netflix Presents: The Characters'),
 (' TV Sketch Comedies', 'The Mr. Peabody and Sherman Show'),
 (' TV Sketch Comedies', 'W/ Bob & David'),
@@ -2399,7 +2399,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 ('Canadian Movies', 'ARQ'),
 ('Canadian Movies', 'I Am the Pretty Thing That Lives in the House'),
 ('Canadian Movies', 'Swearnet Live'),
-('Canadian Movies', 'Trailer Park Boys: Drunk, High and Unemployed: L'),
+('Canadian Movies', 'Trailer Park Boys: Drunk, High and Unemployed: Live In Austin'),
 ('Children & Family Movies', 'Coin Heist'),
 ('Children & Family Movies', 'Pee-wee\'s Big Holiday'),
 ('Children & Family Movies', 'Puss in Book: Trapped in an Epic Tale'),
@@ -2420,7 +2420,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 ('Comedies', 'Slam'),
 ('Comedies', 'Special Correspondents'),
 ('Comedies', 'Take the 10'),
-('Comedies', 'The 101-Year-Old Man Who Skipped Out on the Bill'),
+('Comedies', 'The 101-Year-Old Man Who Skipped Out on the Bill and Disappeared'),
 ('Comedies', 'The Babysitter'),
 ('Comedies', 'The Fundamentals of Caring'),
 ('Comedies', 'The Incredible Jessica James'),
@@ -2533,7 +2533,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 ('Stand-up Comedy & Talk Shows', 'El Especial de Alex Fernndez, el Especial'),
 ('Stand-up Comedy & Talk Shows', 'Fabrizio Copano: Solo pienso en mi'),
 ('Stand-up Comedy & Talk Shows', 'Felipe Neto: My Life Makes No Sense'),
-('Stand-up Comedy & Talk Shows', 'Gabriel lglesias: Im Sorry For What I Said When '),
+('Stand-up Comedy & Talk Shows', 'Gabriel lglesias: Im Sorry For What I Said When I Was Hungry'),
 ('Stand-up Comedy & Talk Shows', 'Gad Gone Wild'),
 ('Stand-up Comedy & Talk Shows', 'Grillo vs Grillo'),
 ('Stand-up Comedy & Talk Shows', 'Hannibal Buress: Comedy Camisado'),
@@ -2544,8 +2544,8 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 ('Stand-up Comedy & Talk Shows', 'Jack Whitehall: At Large'),
 ('Stand-up Comedy & Talk Shows', 'Jandino: Whatever it Takes'),
 ('Stand-up Comedy & Talk Shows', 'Jeff Dunham: Relative Disaster'),
-('Stand-up Comedy & Talk Shows', 'Jeff Foxworthy and Larry the Cable Guy: Weve Bee'),
-('Stand-up Comedy & Talk Shows', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fin'),
+('Stand-up Comedy & Talk Shows', 'Jeff Foxworthy and Larry the Cable Guy: Weve Been Thinking...'),
+('Stand-up Comedy & Talk Shows', 'Jen Kirkman: I\'m Gonna Die Alone (And I Feel Fine)'),
 ('Stand-up Comedy & Talk Shows', 'Jen Kirkman: Just Keep Livin?'),
 ('Stand-up Comedy & Talk Shows', 'Jerry Before Seinfeld'),
 ('Stand-up Comedy & Talk Shows', 'Jim Gaffigan: Cinco'),
@@ -2558,7 +2558,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 ('Stand-up Comedy & Talk Shows', 'Joe Mandes Award-Winning Comedy Special'),
 ('Stand-up Comedy & Talk Shows', 'Joe Rogan: Triggered'),
 ('Stand-up Comedy & Talk Shows', 'John Mulaney: The Comeback Kid'),
-('Stand-up Comedy & Talk Shows', 'Judah Friedlander: America Is the Greatest Count'),
+('Stand-up Comedy & Talk Shows', 'Judah Friedlander: America Is the Greatest Country in the United States'),
 ('Stand-up Comedy & Talk Shows', 'Katherine Ryan: In Trouble'),
 ('Stand-up Comedy & Talk Shows', 'Louis C.K. 2017'),
 ('Stand-up Comedy & Talk Shows', 'Lucas Brothers: On Drugs'),
@@ -2621,7 +2621,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 ('TV Shows', 'Black Mirror'),
 ('TV Shows', 'Bloodline'),
 ('TV Shows', 'BoJack Horseman'),
-('TV Shows', 'BoJack Horseman Christmas Special: Sabrina\'s Chr'),
+('TV Shows', 'BoJack Horseman Christmas Special: Sabrina\'s Christmas Wish'),
 ('TV Shows', 'Bonus Family'),
 ('TV Shows', 'Bordertown'),
 ('TV Shows', 'Borgia'),
@@ -2735,7 +2735,7 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 ('TV Shows', 'Marvel\'s The Defenders'),
 ('TV Shows', 'Master of None'),
 ('TV Shows', 'Medici: Masters of Florence'),
-('TV Shows', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Speci'),
+('TV Shows', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 ('TV Shows', 'Midnight Diner: Tokyo Stories'),
 ('TV Shows', 'Million Yen Women'),
 ('TV Shows', 'MINDHUNTER'),
@@ -2833,12 +2833,12 @@ INSERT INTO `genres` (`genre`, `movie`) VALUES
 CREATE TABLE `movies` (
   `rating` varchar(16) NOT NULL,
   `genres` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `img` varchar(100) NOT NULL,
   `synopsis` varchar(300) NOT NULL,
-  `actors` varchar(100) NOT NULL,
+  `actors` varchar(200) NOT NULL,
   `year` varchar(16) NOT NULL,
-  `duration` varchar(16) NOT NULL,
+  `duration` varchar(48) NOT NULL,
   `page` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -3306,8 +3306,18 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`name`, `rating`, `comment`, `movie`) VALUES
+('1', 1, '1', '3%'),
+('1', 1, '1', 'Aziz'),
+('11', 1, '1', '3%'),
 ('afsdf', 3, 'f45454545', ''),
-('asdf', 2, 'asdfasdfasdf', '');
+('asdf', 2, 'asdfasdfasdf', ''),
+('1', 1, '1', 'Aziz'),
+('1', 1, '1', 'Aziz'),
+('1', 1, '1', 'Aziz'),
+('test', 8, 'test8', 'Aziz'),
+('1', 1, '1', 'Aziz Ansari: Buried Alive'),
+('3', 3, '3', 'Aziz Ansari: Buried Alive'),
+('1922', 2, 'great movie', '1922');
 
 --
 -- Indexes for dumped tables
@@ -3317,25 +3327,19 @@ INSERT INTO `reviews` (`name`, `rating`, `comment`, `movie`) VALUES
 -- Indexes for table `actors`
 --
 ALTER TABLE `actors`
-  ADD PRIMARY KEY (`actor`,`movie`) USING BTREE;
+  ADD PRIMARY KEY (`actor`,`name`) USING BTREE;
 
 --
 -- Indexes for table `genres`
 --
 ALTER TABLE `genres`
-  ADD UNIQUE KEY `genre/movie` (`genre`,`movie`) USING BTREE;
+  ADD UNIQUE KEY `genre/movie` (`genre`,`name`) USING BTREE;
 
 --
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
   ADD PRIMARY KEY (`name`);
-
---
--- Indexes for table `reviews`
---
-ALTER TABLE `reviews`
-  ADD UNIQUE KEY `name` (`name`,`movie`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

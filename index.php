@@ -67,7 +67,7 @@
                 if (!empty($g)) {
                     // add slashes for special characters
                     $genre = addslashes($g);
-                    $sql = "INSERT INTO genres (genre, movie) VALUE('$genre', '$movie')";
+                    $sql = "INSERT INTO genres (genre, name) VALUE('$genre', '$movie')";
                     // insert new values into genre table
                     echo "Executing: " . $sql . "...<br>";
                     try {
@@ -99,7 +99,7 @@
                 if (!empty($a)) {
                     // add slashes for special characters
                     $actor = addslashes($a);
-                    $sql = "INSERT INTO actors (actor, movie) VALUE('$actor', '$movie')";
+                    $sql = "INSERT INTO actors (actor, name) VALUE('$actor', '$movie')";
                     // insert new values into genre table
                     echo "Executing: " . $sql . "...<br>";
                     try {
