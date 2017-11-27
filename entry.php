@@ -33,7 +33,7 @@
       <a href="./about.html" class="menulink">
         about us</a>
       </div>
-
+  <div class="blog">
       <?php
       require 'db.php';
       if(isset($_GET['submit']))
@@ -71,10 +71,9 @@
       echo "<h4>Synopsis: " . $blurb . "</h4>";
 
       ?>
-      <div id="main" class="main">
       </br>
 
-      <strong>Enter your comment below:</strong>
+    <strong>Enter your comment below:</strong>
     </br></br>
     <?php 
       echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\" method=\"get\" style=\"font-weight: bold;\">";
@@ -105,9 +104,6 @@
     </form> -->
 
 
-<div id="commentResult">
-
-</div>
 </br>
 </br>
 </br>
@@ -126,5 +122,6 @@ try {
 }
 ?>
 </div>
+
 </body>
 </html>
