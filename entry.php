@@ -112,7 +112,7 @@
 <?php
 // print out all of the current ratings in html format
 try {
-  $sqlSelect = "SELECT name,rating,comment FROM reviews";
+  $sqlSelect = "SELECT name,rating,comment FROM reviews where movie=\"$movie\"";
   $stmt = $db->query($sqlSelect);
   $comments = $stmt->fetchAll(PDO::FETCH_OBJ);
   $db = null;
