@@ -37,34 +37,56 @@
       <div id="titles" class="blog">
         <h4>Element to make: search by actor or genre (from drop-down form)
           text entry, search/submit button.</h4>
-          <h1>All titles sorted alphabetically:</h1>
-          <ul>
-            <?php
-            require 'db.php';
-            // print out all of the current ratings in html format
-            // connect to db and query all movie names and genres from table movies
-            try {
-              $db = getDB();
-              $sql = "SELECT name FROM movies";
-              $stmt = $db->query($sql);
-            } catch(PDOException $e) {
-              echo '{"error":{"text":'. $e->getMessage() .'}}';
+          <?php 
+            if(isset($_GET['actor'])) {
+              echo "<h1>Actor search results for: " . $_GET['actor'] . "</h1>";
             }
-            foreach ($stmt as $row) {
-              $movie = $row['name'];
-              // add slashes for special characters
-              // transform string containing comma seperated values into array
-              echo "<li>
-              <form method=\"get\" action=\"./entry.php\">
-               <input type=\"hidden\" name=\"title\" value=\"$movie\">
-              <input type=\"submit\" name=\"submit\" value=\"$movie\">
-              </form>
-              </li>";
+            else if (isset($_GET['genre'])) {
+              echo "<h1>Genre search results for: " . $_GET['genre'] . "</h1>";
             }
-            $db = null;
-            ?>
-          </ul>
-        </div>
+            else {
+              echo "<h1>All titles sorted alphabetically</h1>";
+            }
+          ?>
 
+          <!-- <ul> -->
+            <?php
+              require 'db.php';
+                // print out all of the current ratings in html format
+                // connect to db and query all movie names and genres from table movies
+                try {
+                  $db = getDB();
+                  if(isset($_GET['actor'])) {
+                    $actor = addslashes($_GET['actor']);
+                    $sql = "SELECT name FROM actors WHERE actor=\"$actor\"";
+                  }
+                  else if (isset($_GET['genre'])) {
+                    $genre = addslashes($_GET['genre']);
+                    $sql = "SELECT name FROM genres WHERE genre=\"$genre\"";
+                  }
+                  else {
+                    $sql = "SELECT name FROM movies";
+                  }
+                  $stmt = $db->query($sql);
+                } catch(PDOException $e) {
+                  echo '{"error":{"text":'. $e->getMessage() .'}}';
+                }
+                foreach ($stmt as $row) {
+                  $movie = $row['name'];
+                  // add slashes for special characters
+                  // transform string containing comma seperated values into array
+                  echo "
+                  <form method=\"get\" action=\"./entry.php\">
+                  <input type=\"hidden\" name=\"title\" value=\"$movie\">
+                  <input type=\"submit\" name=\"submit\" value=\"$movie\">
+                  </form>
+                  ";
+                  echo "</br>";
+                }
+                $db = null;
+            
+            ?>
+          <!-- </ul>   -->
+        </div>
       </body>
       </html>

@@ -66,8 +66,32 @@
           echo '{"error":{"text":'. $e->getMessage() .'}}';
         }
       }
-      echo "<h3>Leading actors: " . $actors . "</h3>";
-      echo "<h3>Tagged genres: " . $genres . "</h3>";
+      // echo "<h3>Leading actors: " . $actors . "</h3>";
+      echo "<h3>Leading actors: ";
+      $actorArray = explode(",", $actors);
+      for ($i = 0; $i < count($actorArray); $i++) {
+          $actor = $actorArray[$i];
+          $urlActor = urlencode($actor);
+          echo "<a href=\"http://localhost/nitflux/search.php?actor=" . $urlActor . "\">" .  $actor . "</a>";
+          // echo $urlActor;
+          // echo $actorArray[$i];
+          if ($i != count($actorArray)-1)
+            echo ",";
+      }
+      echo "</h3>";
+      // echo "<h3>Tagged genres: " . $genres . "</h3>";
+      echo "<h3>Tagged genres: ";
+      $genreArray = explode(",", $genres);
+      for ($i = 0; $i < count($actorArray); $i++) {
+          $genre = $genreArray[$i];
+          $urlGenre = urlencode($genre);
+          echo "<a href=\"http://localhost/nitflux/search.php?genre=" . $urlGenre . "\">" .  $genre . "</a>";
+          // echo $urlActor;
+          // echo $actorArray[$i];
+          if ($i != count($genreArray)-1)
+            echo ",";
+      }
+      echo "</h3>";
       echo "<h4>Synopsis: " . $blurb . "</h4>";
 
       ?>
