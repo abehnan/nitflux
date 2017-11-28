@@ -16,14 +16,15 @@
         
         // insert the comment into the database
         try {
+
             $db = getDB();
             $userInput = $request->getQueryParams();
             $sqlInsert = 
                 "INSERT INTO reviews(name, rating, comment, movie) VALUES ('" .
-                $userInput['reviewer'] . "','" .
-                $userInput['rating'] . "','" . 
-                $userInput['data'] . "','" . 
-                $userInput['movie'] . "')";
+                addslashes($userInput['reviewer']) . "','" .
+                addslashes($userInput['rating']) . "','" . 
+                addslashes($userInput['data']) . "','" . 
+                addslashes($userInput['movie']) . "')";
 
             $stmt = $db->prepare($sqlInsert);
             $stmt->execute();
@@ -41,7 +42,7 @@
 
             // redirect to the page that called the function
             ob_start();
-            header('Location: http://localhost/nitflux/entry.php?title=' . $urlMovieName . "&submit=" . $urlMovieName);
+            header('Location: http://localhost/nitflux/entry.php?movie=' . $urlMovieName . "&submit=" . $urlMovieName);
             ob_end_flush();
             die();
         } catch(PDOException $e) {

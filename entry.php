@@ -36,13 +36,12 @@
     if(isset($_GET['movie']))
     {
       $movie = $_GET["movie"];
-      $movie = addslashes($movie);
+      $sqlMovie = addslashes($movie);
       try {
         $db = getDB();
-        $sql = "SELECT * FROM movies WHERE name='$movie'";
+        $sql = "SELECT * FROM movies WHERE name='$sqlMovie'";
         $query = $db->prepare($sql);
         $query->execute();
-
           # i don't know the details of fetch_both, but this does what I want
           while($result = $query->fetch(PDO::FETCH_BOTH))
           {
@@ -57,7 +56,7 @@
 
             # opportunity for styling these pices of info
             echo '<h1>' . $title . " (" . $year . ')</h1>';
-            echo '<a class=\'bloglink\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
+            echo '<a class=\'bloglink\' style=\'float: right;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
             break; # just in case of multiples or infinite loops...
           }
 
@@ -100,15 +99,22 @@
         echo "<h3>Duration: " . $dur . "</h3>";
 
       echo "<h4>Synopsis: " . $blurb . "</h4>";
+      
+      try {
+        $sql = "SELECT AVG(rating) AS avgRating FROM reviews WHERE movie='$sqlMovie'";
+        $stmt = $db->query($sql);
+        foreach ($stmt as $row) {
+          $avgRating = $row['avgRating'];
+          if (!is_null($avgRating))
+            echo "<h4> Average Rating: $avgRating </h4>";
+        }
+      } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+      }
 
-      ?>
-      </br>
-
-    <strong>Enter your comment below:</strong>
-    </br></br>
-    <?php
+      echo "</br><strong>Enter your review below:</strong></br></br>";
       echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\" method=\"get\" style=\"font-weight: bold;\">";
-      echo "<input type=\"hidden\" name=\"movie\" value=\"$movie\">";
+      echo "<input type=\"hidden\" name=\"movie\" value=\"$sqlMovie\">";
       echo "Name: &nbsp;";
       echo "<input type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
       echo "</br>";
@@ -118,24 +124,23 @@
       echo "<input type=\"text\" name=\"data\" style=\"width: 600px; height: 200px;\" maxlength=\"500\" required>";
       echo "</br>";
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
-      echo "</form>"
-      ?>
+      echo "</form>";
 
-  </br></br></br>
-  <strong>Previous comments: </strong>
-  </br>
-  <?php
-    // print out all of the current ratings in html format
-    try {
-      $sqlSelect = "SELECT name,rating,comment FROM reviews where movie=\"$movie\"";
-      $stmt = $db->query($sqlSelect);
-      $comments = $stmt->fetchAll(PDO::FETCH_OBJ);
+      echo "</br></br></br><strong>Previous review: </strong> </br>";
+  
+      // print out all of the current ratings in html format
+      try {
+        $sqlSelect = "SELECT name,rating,comment FROM reviews where movie='$sqlMovie'";
+        $stmt = $db->query($sqlSelect);
+        $comments = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        echo  json_encode($comments);
+      } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+      }
+
       $db = null;
-      echo  json_encode($comments);
-    } catch(PDOException $e) {
-      echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
-  ?>
+    ?>
 </div>
 </br></br></br></br></br>
 </body>
