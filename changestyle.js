@@ -144,19 +144,19 @@ function switchLight()
     }
     
 
-    // var bodytext = document.getElementsByClassName('blog');
-    // for(var i = 0, length = bodytext.length; i<length; i++)
-    // {
-    //     bodytext[i].style.backgroundColor="#fff2e6";
-    //     bodytext[i].style.color="black";
-    // }
-
-    var body = document.getElementsByClassName('body');
-    for(var i = 0, length = body.length; i<length; i++)
+    var bodytext = document.getElementsByClassName('blog');
+    for(var i = 0, length = bodytext.length; i<length; i++)
     {
-        body[i].style.backgroundColor="white"
-        body[i].style.color="black";
+        bodytext[i].style.backgroundColor="#fff2e6";
+        bodytext[i].style.color="black";
     }
+
+    // var body = document.getElementsByClassName('body');
+    // for(var i = 0, length = body.length; i<length; i++)
+    // {
+    //     body[i].style.backgroundColor="white"
+    //     body[i].style.color="black";
+    // }
     
     //Main
     var main = document.getElementsByClassName('main');
