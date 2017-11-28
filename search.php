@@ -18,15 +18,10 @@
   </span>
 </div>
 
-<<<<<<< HEAD
   <div id="titlebar" class="titlebar">
     <span style="font-size: 36px">Nitflux&nbsp;</span>
     <br>
     <span style="font-size: 16px">Search Through our Titles!</span>
-=======
-<div id="titlebar" class="titlebar">
-  <span style="font-size: 36px">Nitflux&nbsp;</span>
->>>>>>> ab6c84961d067eecea927683b0040eaf317d1a07
   </br>
 </div>
 

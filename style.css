@@ -88,16 +88,21 @@ a.loginlink:active {
     padding-right: 45%;
 }
 
+
+
 a:link {
     color: red;
+    font-size: 16px;
 }
 
 /* visited link */
 a:visited {
     color: blueviolet;
+    font-size: 16px;
 }
 
 /* mouse over link */
 a:hover {
     color: hotpink;
+    font-size: 16px;
 }
