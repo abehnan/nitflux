@@ -45,82 +45,72 @@ function checkCookie()
 function switchDark()
 {
     
-    //Change color of top login bar 
+    // login bar
     document.getElementById('loginbar').style.backgroundColor="#202020";
     document.getElementById('loginbar').style.color="#99ccff";
     
+    // login links
     var loginlinks = document.getElementsByClassName('loginlink')
     for(var i = 0, length = loginlinks.length; i < length; i++) 
     {
         loginlinks[i].style.color="#ffb3b3";
     }
     
-    //Change colors of buttons
-
+    // theme buttons
     var buttons = document.getElementsByClassName('mybutton');
     for(var i = 0, length = buttons.length; i < length; i++) 
     {
         buttons[i].style.color="#ffb3b3";
         buttons[i].style.backgroundColor="#606060";
     }
-   
 
-    //Change colors of title bars
+    // title bar
     document.getElementById('titlebar').style.backgroundColor="#606060";
     document.getElementById('titlebar').style.color="#99ccff";
     
-    //Menu
+    // menu bar
     document.getElementById('menubar').style.backgroundColor="#A0A0A0";
+
+    // menu links 
     var titlebars=document.getElementsByClassName('menulink');
     for(var i = 0, length = titlebars.length; i < length; i++) 
-        {
-            titlebars[i].style.color="#ffb3b3";
-        }
-    
-    // For the Body    
-    var bodytitles = document.getElementsByClassName('blogtitle');
-    for(var i = 0, length = bodytitles.length; i<length; i++)
     {
-        bodytitles[i].style.backgroundColor="#606060";
-        bodytitles[i].style.color="#ffb3b3";
+        titlebars[i].style.color="#ffb3b3";
     }
     
-    var bodytext = document.getElementsByClassName('blog');
+    // main
+    var bodytext = document.getElementsByClassName('main');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
         bodytext[i].style.backgroundColor="#202020";
         bodytext[i].style.color="#99ccff";
     }
 
-    var body = document.getElementsByClassName('body');
-    for(var i = 0, length = body.length; i<length; i++)
-    {
-        body[i].style.backgroundColor="#202020";
-        body[i].style.color="#99ccff";
-    }
+    // body
+    document.getElementsByTagName("BODY")[0].style.backgroundColor = "#202020";
+    document.getElementsByTagName("BODY")[0].style.color="#99ccff";
 
-    //Main
-    // var main = document.getElementsByClassName('main');
-    // {
-    //     main[i].style.backgroundColor="#202020";
-    //     main[i].style.color="#99ccff";
-    // }
+    // set the cookie 
     setCookie("theme", "dark", 2);
 };
 
 function switchLight()
 {
+    // set cookie
     setCookie("theme", "light", 2);
-    //Change color of top login bar 
+
+    // login bar
     document.getElementById('loginbar').style.backgroundColor="rgb(167, 78, 0)";
     document.getElementById('loginbar').style.color="white";
+
+    // login links
     var loginlinks = document.getElementsByClassName('loginlink')
     for(var i = 0, length = loginlinks.length; i < length; i++) 
     {
         loginlinks[i].style.color="white";
     }
     
-    //Change colors of buttons
+    // theme buttons
     var buttons = document.getElementsByClassName('mybutton');
     for(var i = 0, length = buttons.length; i < length; i++) 
     {
@@ -128,44 +118,30 @@ function switchLight()
         buttons[i].style.backgroundColor="rgb(230, 136, 59)";
     }
 
-    //Title
+    // title bar
     document.getElementById('titlebar').style.backgroundColor="rgb(230, 136, 59)";
     document.getElementById('titlebar').style.color="white";
     
-    //Menu
+    // menu bar
     document.getElementById('menubar').style.backgroundColor="rgb(218, 218, 218)";
+
+    // menu buttons
     var titlebars=document.getElementsByClassName('menulink');
     for(var i = 0, length = titlebars.length; i < length; i++) 
         {
             titlebars[i].style.color="black";
         }
-
-    //Body    
-    var bodytitles = document.getElementsByClassName('blogtitle');
-    for(var i = 0, length = bodytitles.length; i<length; i++)
-    {
-        bodytitles[i].style.backgroundColor="#ffd6b3";
-        bodytitles[i].style.color="black";
-    }
     
-    var bodytext = document.getElementsByClassName('blog');
+    // main
+    var bodytext = document.getElementsByClassName('main');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
-        bodytext[i].style.backgroundColor="white";
+        bodytext[i].style.backgroundColor="rgb(230, 136, 59);";
         bodytext[i].style.color="black";
     }
 
-    var body = document.getElementsByClassName('body');
-    for(var i = 0, length = body.length; i<length; i++)
-    {
-        body[i].style.backgroundColor="white"
-        body[i].style.color="black";
-    }
-    
-    /*Main
-    var main = document.getElementsByClassName('main');
-    {
-        //main[i].style.backgroundColor="white";
-        main[i].style.color="black";
-    }*/
+    // body
+    document.getElementsByTagName("BODY")[0].style.backgroundColor = "rgb(230, 136, 59);";
+    document.getElementsByTagName("BODY")[0].style.color="black";
+
 }
