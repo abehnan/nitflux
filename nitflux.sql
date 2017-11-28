@@ -38,6 +38,7 @@ CREATE TABLE `actors` (
 --
 
 INSERT INTO `actors` (`actor`, `name`) VALUES
+('Joseph Vybihal', 'COMP307: The Musical'),
 (' A-ra Go', 'Black'),
 (' A.J. LoCascio', 'Dawn of the Croods'),
 (' Aaron Carpenter', 'Chasing Cameron'),
@@ -1071,6 +1072,8 @@ CREATE TABLE `genres` (
 --
 
 INSERT INTO `genres` (`genre`, `name`) VALUES
+('Satire', 'COMP307: The Musical'),
+('Dark Comedy', 'COMP307: The Musical'),
 (' ', 'Deidra & Laney Rob a Train'),
 (' ', 'Michael Bolton\'s Big, Sexy Valentine\'s Day Special'),
 (' ', 'The Incredible Jessica James'),
@@ -2197,6 +2200,11 @@ INSERT INTO `genres` (`genre`, `name`) VALUES
 (' TV Comedies', 'Grace and Frankie'),
 (' TV Comedies', 'Haters Back Off'),
 (' TV Comedies', 'Home: Adventures with Tip & Oh');
+
+
+
+
+
 INSERT INTO `genres` (`genre`, `name`) VALUES
 (' TV Comedies', 'Jack Whitehall: Travels with My Father'),
 (' TV Comedies', 'Lady Dynamite'),
@@ -2847,6 +2855,7 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`rating`, `genres`, `name`, `img`, `synopsis`, `actors`, `year`, `duration`, `page`) VALUES
+('R', 'Dark Comedy, Satire', 'COMP307: The Musical', "./lordNsaviour.jpg", 'A young man follows his dreams of being in a band, becomes an unexpected sensation.', 'Joseph Vybihal', '2017', 'Not long enough', ""),
 ('TV-14 ', 'Comedies, Teen Comedies', '#realityhigh', 'https://occ-0-1522-1001.1.nflxso.net/art/e49fb/8cac6c0ddcabdeb82fb8e71e154ddc57ab1e49fb.jpg', 'When nerdy high schooler Dani finally attracts the interest of her longtime crush, she lands in the cross hairs of his ex, a social media celebrity.', 'Nesta Cooper, Kate Walsh, John Michael Higgins', '2017', 'null', 'https://www.netflix.com/ca/title/80125979'),
 ('TV-MA ', 'TV Shows, Teen TV Shows, TV Dramas, Crime TV Dramas, TV Teen Dramas, TV Mysteries', '13 Reasons Why', 'https://occ-0-1522-1001.1.nflxso.net/art/20b99/5373b39e231eb6bfe46a67a60cf8d144ca820b99.jpg', 'After a teenage girl\'s perplexing suicide, a classmate receives a series of tapes that unravel the mystery of her tragic choice.', 'Dylan Minnette, Katherine Langford, Kate Walsh', '2017', '1 Season', 'https://www.netflix.com/ca/title/80117470'),
 ('TV-MA ', 'Documentaries, Social & Cultural Docs', '13TH', 'https://occ-0-1522-1001.1.nflxso.net/art/58bb9/62ae6c07505313d7daea10ad82a5cf07a7f58bb9.jpg', 'In this thought-provoking documentary, scholars, activists and politicians analyze the criminalization of African Americans and the U.S. prison boom.', 'null', '2016', 'null', 'https://www.netflix.com/ca/title/80091741'),
@@ -2960,6 +2969,10 @@ INSERT INTO `movies` (`rating`, `genres`, `name`, `img`, `synopsis`, `actors`, `
 ('NR ', 'Stand-up Comedy & Talk Shows, Comedies, Dark Comedies, Stand-up Comedy', 'Doug Benson: Doug Dynasty', 'https://occ-0-1522-1001.1.nflxso.net/art/827e8/2c9a5c0259f9086f080c1e640e144159326827e8.jpg', 'Renowned stoner Doug Benson takes his relaxed yet irreverent vibe to Seattle\'s Neptune Theater, where he shares advice from old ladies and more.', 'Doug Benson', '2014', 'null', 'https://www.netflix.com/ca/title/80005325'),
 ('TV-Y7-FV ', 'TV Shows, Kids\' TV, TV Cartoons', 'Dragons: Race to the Edge', 'https://occ-0-1522-1001.1.nflxso.net/art/a514a/6f6b7333c3e8240520f5018361842fec845a514a.jpg', 'From the creators of \"How to Train Your Dragon\" comes an all-new Netflix original series that takes Hiccup and Toothless to the edge of adventure!', 'Jay Baruchel, America Ferrera, T.J. Miller', '2017', '5 Seasons', 'https://www.netflix.com/ca/title/80039394'),
 ('TV-14 ', 'TV Shows, TV Dramas', 'Dynasty', 'https://occ-0-1522-1001.1.nflxso.net/art/0a770/7503371701f8b1628a5fbb6c9caa6ca6a450a770.jpg', 'The Carringtons and the Colbys feud for control over their fortune -- and their children -- in this updated reboot of the classic prime-time soap.', 'Elizabeth Gillies, Nathalie Kelley, Grant Show', '2017', '1 Season', 'https://www.netflix.com/ca/title/80179394');
+
+
+
+
 INSERT INTO `movies` (`rating`, `genres`, `name`, `img`, `synopsis`, `actors`, `year`, `duration`, `page`) VALUES
 ('NR ', 'Documentaries, Social & Cultural Docs, Political Documentaries', 'E-Team', 'https://occ-0-1522-1001.1.nflxso.net/art/7c834/438e84e0958a7ac69ee9765fc4841c2e7ec7c834.jpg', 'The courageous investigators of Human Rights Watch\'s Emergencies Team risk their lives to document unlawful attacks on civilians by brutal dictators.', 'null', '2014', 'null', 'https://www.netflix.com/ca/title/70299286'),
 ('TV-MA ', 'TV Shows, TV Comedies', 'Easy', 'https://occ-0-1522-1001.1.nflxso.net/art/bd1a2/0eacaf09dd25c981244c0d5502a2c26a144bd1a2.jpg', 'This eclectic, star-studded anthology follows diverse Chicagoans fumbling through the modern maze of love, sex, technology and culture.', 'Orlando Bloom, Malin Akerman, Marc Maron', '2016', '1 Season', 'https://www.netflix.com/ca/title/80095699'),
@@ -3075,6 +3088,10 @@ INSERT INTO `movies` (`rating`, `genres`, `name`, `img`, `synopsis`, `actors`, `
 ('TV-MA ', 'Comedies, Dark Comedies, Satires, Horror Movies, Satanic Stories', 'Little Evil', 'https://occ-0-1522-1001.1.nflxso.net/art/61536/f3067eb67c08ca623e0c7959a898711ad9461536.jpg', 'In this horror-comedy, a recently married man who wants to bond with his stepson begins to fear that the boy is a demon.', 'Adam Scott, Evangeline Lilly, Bridget Everett', '2017', 'null', 'https://www.netflix.com/ca/title/80139506'),
 ('TV-Y7 ', 'TV Shows, Anime, Anime Fantasy, Anime Series', 'Little Witch Academia', 'https://occ-0-1522-1001.1.nflxso.net/art/c0f63/14bb9ede8d1d739ff767d1bb0b6b8b1272ac0f63.jpg', 'Akko enrolls at the Luna Nova Witchcraft Academy. She\'s not the best student, but her bright attitude is the key to her and her friends\' success.', 'Megumi Han, Fumiko Orikasa, Michiyo Murase', '2017', '2 Seasons', 'https://www.netflix.com/ca/title/80156387'),
 ('TV-MA ', 'TV Shows, British TV Shows, British TV Dramas, TV Dramas, Crime TV Dramas, LGBTQ TV Shows', 'London Spy', 'https://occ-0-1522-1001.1.nflxso.net/art/03d3c/616eec8b100ac922cdec89bbf7dbe4684fc03d3c.jpg', 'When his reclusive-banker lover disappears, a hard-partying young British hedonist plunges into the dangerous world of espionage to find the truth.', 'Ben Whishaw, Jim Broadbent, Edward Holcroft', '2015', '1 Season', 'https://www.netflix.com/ca/title/80048568');
+
+
+
+
 INSERT INTO `movies` (`rating`, `genres`, `name`, `img`, `synopsis`, `actors`, `year`, `duration`, `page`) VALUES
 ('TV-14 ', 'Documentaries, Crime Documentaries', 'Long Shot', 'https://occ-0-1522-1001.1.nflxso.net/art/4e06d/185cc4b07294b3f6d452d7ec556384e245b4e06d.jpg', 'When Juan Catalan is arrested for a murder he didn\'t commit, he builds his case for innocence around raw footage from a popular TV show. A documentary.', 'null', '2017', 'null', 'https://www.netflix.com/ca/title/80182115'),
 ('TV-14 ', 'TV Shows, TV Dramas, Crime TV Dramas, TV Westerns', 'Longmire', 'https://occ-0-1522-1001.1.nflxso.net/art/0c7b3/9bc769aab9367fa48f607fc27da0e6406ff0c7b3.jpg', 'This contemporary crime thriller focuses on a Wyoming sheriff who\'s rebuilding his life and career following the death of his wife.', 'Robert Taylor, Katee Sackhoff, Lou Diamond Phillips', '2017', '6 Seasons', 'https://www.netflix.com/ca/title/70269479'),

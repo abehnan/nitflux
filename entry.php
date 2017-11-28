@@ -52,9 +52,11 @@
             $actors = $result['actors'];
             $genres = $result['genres'];
             $blurb = $result['synopsis'];
+            $dur = $result['duration'];
+            $year = $result['year'];
 
             # opportunity for styling these pices of info
-            echo '<h1>' . $title . '</h1>';
+            echo '<h1>' . $title . " (" . $year . ')</h1>';
             echo '<a href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
             break; # just in case of multiples or infinite loops...
           }
@@ -89,6 +91,7 @@
             echo ",";
       }
       echo "</h3>";
+      echo "<h3>Duration: " . $dur . "</h3>";
       echo "<h4>Synopsis: " . $blurb . "</h4>";
 
       ?>
@@ -96,7 +99,7 @@
 
     <strong>Enter your comment below:</strong>
     </br></br>
-    <?php 
+    <?php
       echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\" method=\"get\" style=\"font-weight: bold;\">";
       echo "<input type=\"hidden\" name=\"movie\" value=\"$movie\">";
       echo "Name: &nbsp;";
@@ -143,6 +146,6 @@ try {
 }
 ?>
 </div>
-</br></br></br></br></br> 
+</br></br></br></br></br>
 </body>
 </html>
