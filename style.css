@@ -29,8 +29,7 @@ body {
     background-color: #fff2e6;
     box-sizing: border-box;
     padding-left: 7%;
-    padding-right: 45%;
-    background-color: rgb(241, 168, 103);
+    padding-right: 7%;
 }
 
 .blogtitle {
@@ -39,10 +38,14 @@ body {
     background-color: #ffd6b3;
     box-sizing: border-box;
     padding-left: 7%;
-    padding-right: 45%;
+    padding-right: 7%;
     font-size: 25px;
 }
 
+.blog {
+    padding-left: 7%;
+    padding-right: 7%;
+}
 
 .mybutton {
     background-color: rgb(230, 136, 59);
@@ -79,14 +82,7 @@ a.menulink:active
 a.loginlink:active {
     color: slateblue;
 }
-.main{
-    padding-top: 0%;
-    margin-top: 0%;
-    background-color: #fff2e6;
-    box-sizing: border-box;
-    padding-left: 7%;
-    padding-right: 45%;
-}
+
 
 
 

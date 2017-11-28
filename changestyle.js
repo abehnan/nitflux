@@ -143,6 +143,7 @@ function switchLight()
         bodytitles[i].style.color="black";
     }
     
+
     var bodytext = document.getElementsByClassName('blog');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
@@ -160,7 +161,7 @@ function switchLight()
     //Main
     var main = document.getElementsByClassName('main');
     {
-        main[i].style.backgroundColor="white";
+        main[i].style.backgroundColor ="#fff2e6";
         main[i].style.color="black";
     }
 }
