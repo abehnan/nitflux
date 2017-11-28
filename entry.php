@@ -112,69 +112,8 @@
       echo "</br>";
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>"
-    ?>
+      ?>
 
-    <!-- <form name="comment" action="http://localhost/nitflux/addComment" method="get" style="font-weight: bold;">
-    <input type="hidden" value=$movie>
-    Name: &nbsp;
-    <input type="text" name="reviewer" maxlength="16">
-    </br>
-    Rating: &nbsp;
-    <input type="text" name="rating" maxlength="2"> / 10
-    </br>
-    <input type="text" name="data" style="width: 600px; height: 200px;" maxlength="500">
-    </br>
-    <input type="submit" class="mybutton" value="Submit">
-    </form> -->
-
-      } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-      }
-    }
-    // echo "<h3>Leading actors: " . $actors . "</h3>";
-    echo "<h3>Leading actors: ";
-    $actorArray = explode(",", $actors);
-    for ($i = 0; $i < count($actorArray); $i++) {
-        $actor = $actorArray[$i];
-        $urlActor = urlencode($actor);
-        echo "<a href=\"http://localhost/nitflux/search.php?actor=" . $urlActor . "\">" .  $actor . "</a>";
-        // echo $urlActor;
-        // echo $actorArray[$i];
-        if ($i != count($actorArray)-1)
-          echo ",";
-    }
-    echo "</h3>";
-    // echo "<h3>Tagged genres: " . $genres . "</h3>";
-    echo "<h3>Tagged genres: ";
-    $genreArray = explode(",", $genres);
-    for ($i = 0; $i < count($actorArray); $i++) {
-        $genre = $genreArray[$i];
-        $urlGenre = urlencode($genre);
-        echo "<a href=\"http://localhost/nitflux/search.php?genre=" . $urlGenre . "\">" .  $genre . "</a>";
-        // echo $urlActor;
-        // echo $actorArray[$i];
-        if ($i != count($genreArray)-1)
-          echo ",";
-    }
-    echo "</h3>";
-    echo "<h4>Synopsis: " . $blurb . "</h4>";
-
-  ?>
-  </br><strong>Enter your comment below:</strong></br></br>
-  <?php
-    echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\" method=\"get\" style=\"font-weight: bold;\">";
-    echo "<input type=\"hidden\" name=\"movie\" value=\"$movie\">";
-    echo "Name: &nbsp;";
-    echo "<input type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
-    echo "</br>";
-    echo "Rating: &nbsp;";
-    echo "<input type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
-    echo "</br>";
-    echo "<input type=\"text\" name=\"data\" style=\"width: 600px; height: 200px;\" maxlength=\"500\" required>";
-    echo "</br>";
-    echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
-    echo "</form>"
-  ?>
   </br></br></br>
   <strong>Previous comments: </strong>
   </br>
