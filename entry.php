@@ -57,7 +57,7 @@
 
             # opportunity for styling these pices of info
             echo '<h1>' . $title . " (" . $year . ')</h1>';
-            echo '<a href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
+            echo '<a class=\'bloglink\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
             break; # just in case of multiples or infinite loops...
           }
 
@@ -72,7 +72,7 @@
         for ($i = 0; $i < count($actorArray); $i++) {
             $actor = $actorArray[$i];
             $urlActor = urlencode($actor);
-            echo "<a href=\"http://localhost/nitflux/search.php?actor=" . $urlActor . "\">" .  $actor . "</a>";
+            echo "<a class=\"bloglink\" href=\"http://localhost/nitflux/search.php?actor=" . $urlActor . "\">" .  $actor . "</a>";
             // echo $urlActor;
             // echo $actorArray[$i];
             if ($i != count($actorArray)-1)
@@ -84,10 +84,10 @@
         // echo "<h3>Tagged genres: " . $genres . "</h3>";
         echo "<h3>Tagged genres: ";
         $genreArray = explode(",", $genres);
-        for ($i = 0; $i < count($actorArray); $i++) {
+        for ($i = 0; $i < count($genreArray); $i++) {
             $genre = $genreArray[$i];
             $urlGenre = urlencode($genre);
-            echo "<a href=\"http://localhost/nitflux/search.php?genre=" . $urlGenre . "\">" .  $genre . "</a>";
+            echo "<a class=\"bloglink\" href=\"http://localhost/nitflux/search.php?genre=" . $urlGenre . "\">" .  $genre . "</a>";
             // echo $urlActor;
             // echo $actorArray[$i];
             if ($i != count($genreArray)-1)

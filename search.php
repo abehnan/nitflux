@@ -80,7 +80,7 @@ text entry, search/submit button.</h4>
       // </form>
       // ";
       $urlMovie = urlencode($movie);
-      echo "<li><a href=\"http://localhost/nitflux/entry.php?movie=" . $urlMovie . "\">" .  $movie . "</a></li>";
+      echo "<li><a class=\"bloglink\"  href=\"http://localhost/nitflux/entry.php?movie=" . $urlMovie . "\">" .  $movie . "</a></li>";
     }
     $db = null;
   ?></ul>  

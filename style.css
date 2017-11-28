@@ -59,8 +59,21 @@ body {
 a.menulink {
     color: black;
     text-decoration: none;
+    font-weight: bold;
     text-transform: uppercase;
     font-size: 18px;
+}
+
+a.bloglink {
+    color: purple;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a.bloglink:visited {
+    color: purple;
+    font-size: 16px;
 }
 
 a.menulink:visited {
@@ -73,11 +86,13 @@ a.loginlink {
     text-decoration: none;
 }
 
+a.bloglink:hover,
 a.menulink:hover,
 a.loginlink:hover {
     text-decoration: underline;
 }
 
+a.bloglink:active,
 a.menulink:active
 a.loginlink:active {
     color: slateblue;
@@ -85,20 +100,21 @@ a.loginlink:active {
 
 
 
-
+/* 
 a:link {
     color: red;
     font-size: 16px;
 }
 
-/* visited link */
+// visited link 
 a:visited {
     color: blueviolet;
     font-size: 16px;
-}
+} 
+*/
 
 /* mouse over link */
 a:hover {
     color: hotpink;
-    font-size: 16px;
-}
+    font-size: 18px;
+} 

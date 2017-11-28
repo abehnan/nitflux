@@ -87,11 +87,10 @@ function switchDark()
         bodytext[i].style.color="#99ccff";
     }
 
-    // var body = document.getElementsByClassName('body');
-    // for(var i = 0, length = body.length; i<length; i++)
-    // {
-    //     body[i].style.backgroundColor="#202020";
-    //     body[i].style.color="#99ccff";
+        // this breaks the theme switch
+    // var bloglinks = document.getElementsByClassName('bloglink');
+    // for (var i = 0, length = titlebars.length; i < length; i++) {
+    //     bloglinks[i].style.color = "#ffb3b3";
     // }
 
     //Main
@@ -151,11 +150,10 @@ function switchLight()
         bodytext[i].style.color="black";
     }
 
-    // var body = document.getElementsByClassName('body');
-    // for(var i = 0, length = body.length; i<length; i++)
-    // {
-    //     body[i].style.backgroundColor="white"
-    //     body[i].style.color="black";
+    // bloglinks
+    // var bloglinks = document.getElementsByClassName('bloglink');
+    // for (var i = 0, length = bodytext.length; i < length; i++) {
+    //     bloglinks[i].style.color = "black";
     // }
     
     //Main
