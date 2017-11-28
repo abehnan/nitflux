@@ -1,11 +1,8 @@
 body {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     margin: 0;
-<<<<<<< HEAD
     background-color: #fff2e6;
-=======
-    background-color: rgb(241, 168, 103);
->>>>>>> ab6c84961d067eecea927683b0040eaf317d1a07
+
 }
 
 .loginbar {
@@ -29,10 +26,7 @@ body {
 .main {
     padding-top: 0%;
     margin-top: 0%;
-<<<<<<< HEAD
     background-color: #fff2e6;
-=======
->>>>>>> ab6c84961d067eecea927683b0040eaf317d1a07
     box-sizing: border-box;
     padding-left: 7%;
     padding-right: 45%;
@@ -92,4 +86,18 @@ a.loginlink:active {
     box-sizing: border-box;
     padding-left: 7%;
     padding-right: 45%;
+}
+
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: blueviolet;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
 }
