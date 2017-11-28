@@ -87,12 +87,12 @@ function switchDark()
         bodytext[i].style.color="#99ccff";
     }
 
-    var body = document.getElementsByClassName('body');
-    for(var i = 0, length = body.length; i<length; i++)
-    {
-        body[i].style.backgroundColor="#202020";
-        body[i].style.color="#99ccff";
-    }
+    // var body = document.getElementsByClassName('body');
+    // for(var i = 0, length = body.length; i<length; i++)
+    // {
+    //     body[i].style.backgroundColor="#202020";
+    //     body[i].style.color="#99ccff";
+    // }
 
     //Main
     var main = document.getElementsByClassName('main');
@@ -144,12 +144,12 @@ function switchLight()
     }
     
 
-    var bodytext = document.getElementsByClassName('blog');
-    for(var i = 0, length = bodytext.length; i<length; i++)
-    {
-        bodytext[i].style.backgroundColor="#fff2e6";
-        bodytext[i].style.color="black";
-    }
+    // var bodytext = document.getElementsByClassName('blog');
+    // for(var i = 0, length = bodytext.length; i<length; i++)
+    // {
+    //     bodytext[i].style.backgroundColor="#fff2e6";
+    //     bodytext[i].style.color="black";
+    // }
 
     var body = document.getElementsByClassName('body');
     for(var i = 0, length = body.length; i<length; i++)

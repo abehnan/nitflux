@@ -42,20 +42,9 @@ body {
     font-size: 25px;
 }
 
-<<<<<<< HEAD
 .blog {
     padding-left: 7%;
     padding-right: 7%;
-=======
-.blog{
-    padding-top: 0%;
-    margin-top: 0%;
-    background-color: #ffd6b3;
-    box-sizing: border-box;
-    padding-left: 7%;
-    padding-right: 45%;
-    font-size: 16px;
->>>>>>> 4e077f2fb839aef5627e6e22580c766cdc87989d
 }
 
 .mybutton {
