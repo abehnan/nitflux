@@ -28,13 +28,20 @@
             $stmt = $db->prepare($sqlInsert);
             $stmt->execute();
             $db = null;
+            $movie = print_r($userInput['movie'], true);
+            // $htmlFormatMovie = htmlentities($userInput['movie']);
+            $urlMovieName = urlencode($movie);
 
-            $htmlFormatMovie = htmlentities($userInput['movie']);
-            // echo $userInput['movie'];
+            //debug
+            // echo '$userInput[movie]: ' . $userInput['movie'];
             // echo "</br>";
-            // echo $htmlFormatMovie;
+            // echo '$htmlFormatMovie: ' . $htmlFormatMovie;
+            // echo "</br>";
+            // echo  'urlencode($movie): ' . urlencode($movie);
+
+            // redirect to the page that called the function
             ob_start();
-            header('Location: http://localhost/nitflux/entry.php?title=' . $htmlFormatMovie . "&submit=" . $htmlFormatMovie);
+            header('Location: http://localhost/nitflux/entry.php?title=' . $urlMovieName . "&submit=" . $urlMovieName);
             ob_end_flush();
             die();
         } catch(PDOException $e) {
@@ -60,7 +67,7 @@
                 if (!empty($g)) {
                     // add slashes for special characters
                     $genre = addslashes($g);
-                    $sql = "INSERT INTO genres (genre, movie) VALUE('$genre', '$movie')";
+                    $sql = "INSERT INTO genres (genre, name) VALUE('$genre', '$movie')";
                     // insert new values into genre table
                     echo "Executing: " . $sql . "...<br>";
                     try {
@@ -92,7 +99,7 @@
                 if (!empty($a)) {
                     // add slashes for special characters
                     $actor = addslashes($a);
-                    $sql = "INSERT INTO actors (actor, movie) VALUE('$actor', '$movie')";
+                    $sql = "INSERT INTO actors (actor, name) VALUE('$actor', '$movie')";
                     // insert new values into genre table
                     echo "Executing: " . $sql . "...<br>";
                     try {
