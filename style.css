@@ -1,6 +1,8 @@
 body {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     margin: 0;
+    background-color: #fff2e6;
+
 }
 
 .loginbar {
@@ -21,13 +23,14 @@ body {
     padding: 8px 7% 8px 7%;
 }
 
-.blog {
+.main {
     padding-top: 0%;
     margin-top: 0%;
-    background-color: white;
+    background-color: #fff2e6;
     box-sizing: border-box;
     padding-left: 7%;
     padding-right: 45%;
+    background-color: rgb(241, 168, 103);
 }
 
 .blogtitle {
@@ -79,8 +82,27 @@ a.loginlink:active {
 .main{
     padding-top: 0%;
     margin-top: 0%;
-    background-color: white;
+    background-color: #fff2e6;
     box-sizing: border-box;
     padding-left: 7%;
     padding-right: 45%;
+}
+
+
+
+a:link {
+    color: red;
+    font-size: 16px;
+}
+
+/* visited link */
+a:visited {
+    color: blueviolet;
+    font-size: 16px;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+    font-size: 16px;
 }

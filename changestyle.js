@@ -30,21 +30,16 @@ function checkCookie()
    
     if (user == "dark")
     {
-        
         switchDark();
     }
     else if(user == "light")
-    {
-        
-        switchLight();
-    }
-    else 
-    {switchLight();}
+    { switchLight();}
+    else {switchLight();}
 }
-
 function switchDark()
 {
-    
+    setCookie("theme", "dark", 1);
+    document.body.style.backgroundColor="#202020";
     //Change color of top login bar 
     document.getElementById('loginbar').style.backgroundColor="#202020";
     document.getElementById('loginbar').style.color="#99ccff";
@@ -100,17 +95,17 @@ function switchDark()
     }
 
     //Main
-    // var main = document.getElementsByClassName('main');
-    // {
-    //     main[i].style.backgroundColor="#202020";
-    //     main[i].style.color="#99ccff";
-    // }
-    setCookie("theme", "dark", 2);
+    var main = document.getElementsByClassName('main');
+    {
+        main[i].style.backgroundColor="#202020";
+        main[i].style.color="#99ccff";
+    }
 };
 
 function switchLight()
 {
-    setCookie("theme", "light", 2);
+    setCookie("theme", "light", 1);
+    document.body.style.backgroundColor="#fff2e6";
     //Change color of top login bar 
     document.getElementById('loginbar').style.backgroundColor="rgb(167, 78, 0)";
     document.getElementById('loginbar').style.color="white";
@@ -151,7 +146,7 @@ function switchLight()
     var bodytext = document.getElementsByClassName('blog');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
-        bodytext[i].style.backgroundColor="white";
+        bodytext[i].style.backgroundColor="#fff2e6";
         bodytext[i].style.color="black";
     }
 
@@ -162,10 +157,10 @@ function switchLight()
         body[i].style.color="black";
     }
     
-    /*Main
+    //Main
     var main = document.getElementsByClassName('main');
     {
-        //main[i].style.backgroundColor="white";
+        main[i].style.backgroundColor="white";
         main[i].style.color="black";
-    }*/
+    }
 }
