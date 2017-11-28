@@ -24,15 +24,12 @@
 </div>
 
 <div id="menubar" class="menubar">
-  <a href="." class="menulink">
-    home</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="./search.php" class="menulink">
-      search</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="./about.html" class="menulink">
-        about us</a>
-      </div>
+  <a href="./index.html" class="menulink">home</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="./search.php" class="menulink">search</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="./about.html" class="menulink">about us</a>
+</div>
   <div class="blog">
       <?php
       require 'db.php';
@@ -146,6 +143,6 @@ try {
 }
 ?>
 </div>
-
+</br></br></br></br></br> 
 </body>
 </html>

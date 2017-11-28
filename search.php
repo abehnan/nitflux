@@ -24,15 +24,12 @@
 </div>
 
 <div id="menubar" class="menubar">
-  <a href="." class="menulink">
-    home</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="./search.php" class="menulink">
-      search</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="./about.html" class="menulink">
-        about us</a>
-      </div>
+  <a href="./index.html" class="menulink">home</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="./search.php" class="menulink">search</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="./about.html" class="menulink">about us</a>
+</div>
 
       <div id="titles" class="blog">
         <h4>Element to make: search by actor or genre (from drop-down form)
