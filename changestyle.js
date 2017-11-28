@@ -30,21 +30,16 @@ function checkCookie()
    
     if (user == "dark")
     {
-        
         switchDark();
     }
     else if(user == "light")
-    {
-        
-        switchLight();
-    }
-    else 
-    {switchLight();}
+    { switchLight();}
+    else {switchLight();}
 }
 
 function switchDark()
 {
-    
+    document.body.style.backgroundColor="#202020";
     //Change color of top login bar 
     document.getElementById('loginbar').style.backgroundColor="#202020";
     document.getElementById('loginbar').style.color="#99ccff";
@@ -92,12 +87,14 @@ function switchDark()
         bodytext[i].style.color="#99ccff";
     }
 
-    var body = document.getElementsByClassName('body');
-    for(var i = 0, length = body.length; i<length; i++)
-    {
-        body[i].style.backgroundColor="#202020";
-        body[i].style.color="#99ccff";
-    }
+    // var body = document.getElementsByClassName('body');
+    // for(var i = 0, length = body.length; i<length; i++)
+    // {
+    //     body[i].style.backgroundColor="#202020";
+    //     body[i].style.color="#99ccff";
+    // }
+   
+
 
     //Main
     // var main = document.getElementsByClassName('main');
@@ -106,10 +103,13 @@ function switchDark()
     //     main[i].style.color="#99ccff";
     // }
     setCookie("theme", "dark", 2);
+
+    document.style.backgroundColor="#202020";
 };
 
 function switchLight()
 {
+    document.body.style.backgroundColor="#fff2e6";
     setCookie("theme", "light", 2);
     //Change color of top login bar 
     document.getElementById('loginbar').style.backgroundColor="rgb(167, 78, 0)";
@@ -151,14 +151,14 @@ function switchLight()
     var bodytext = document.getElementsByClassName('blog');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
-        bodytext[i].style.backgroundColor="white";
+        bodytext[i].style.backgroundColor="#fff2e6";
         bodytext[i].style.color="black";
     }
 
     var body = document.getElementsByClassName('body');
     for(var i = 0, length = body.length; i<length; i++)
     {
-        body[i].style.backgroundColor="white"
+        body[i].style.backgroundColor="#fff2e6";
         body[i].style.color="black";
     }
     

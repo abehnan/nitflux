@@ -20,6 +20,8 @@
 
   <div id="titlebar" class="titlebar">
     <span style="font-size: 36px">Nitflux&nbsp;</span>
+    <br>
+    <span style="font-size: 16px">Search Through our Titles!</span>
   </br>
 </div>
 
