@@ -39,13 +39,8 @@ function checkCookie()
 
 function switchDark()
 {
-<<<<<<< HEAD
     document.body.style.backgroundColor="#202020";
     //Change color of top login bar 
-=======
-    
-    // login bar
->>>>>>> ab6c84961d067eecea927683b0040eaf317d1a07
     document.getElementById('loginbar').style.backgroundColor="#202020";
     document.getElementById('loginbar').style.color="#99ccff";
     
@@ -86,7 +81,6 @@ function switchDark()
         bodytext[i].style.color="#99ccff";
     }
 
-<<<<<<< HEAD
     // var body = document.getElementsByClassName('body');
     // for(var i = 0, length = body.length; i<length; i++)
     // {
@@ -95,11 +89,6 @@ function switchDark()
     // }
    
 
-=======
-    // body
-    document.getElementsByTagName("BODY")[0].style.backgroundColor = "#202020";
-    document.getElementsByTagName("BODY")[0].style.color="#99ccff";
->>>>>>> ab6c84961d067eecea927683b0040eaf317d1a07
 
     // set the cookie 
     setCookie("theme", "dark", 2);
@@ -109,11 +98,7 @@ function switchDark()
 
 function switchLight()
 {
-<<<<<<< HEAD
     document.body.style.backgroundColor="#fff2e6";
-=======
-    // set cookie
->>>>>>> ab6c84961d067eecea927683b0040eaf317d1a07
     setCookie("theme", "light", 2);
 
     // login bar
@@ -153,7 +138,6 @@ function switchLight()
     var bodytext = document.getElementsByClassName('main');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
-<<<<<<< HEAD
         bodytext[i].style.backgroundColor="#fff2e6";
         bodytext[i].style.color="black";
     }
@@ -171,14 +155,4 @@ function switchLight()
         //main[i].style.backgroundColor="white";
         main[i].style.color="black";
     }*/
-=======
-        bodytext[i].style.backgroundColor="rgb(230, 136, 59);";
-        bodytext[i].style.color="black";
-    }
-
-    // body
-    document.getElementsByTagName("BODY")[0].style.backgroundColor = "rgb(230, 136, 59);";
-    document.getElementsByTagName("BODY")[0].style.color="black";
-
->>>>>>> ab6c84961d067eecea927683b0040eaf317d1a07
 }
