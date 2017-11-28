@@ -104,7 +104,7 @@ function switchDark()
 
 function switchLight()
 {
-    setCookie("theme", "dark", 1);
+    setCookie("theme", "light", 1);
     document.body.style.backgroundColor="#fff2e6";
     //Change color of top login bar 
     document.getElementById('loginbar').style.backgroundColor="rgb(167, 78, 0)";
@@ -146,7 +146,7 @@ function switchLight()
     var bodytext = document.getElementsByClassName('blog');
     for(var i = 0, length = bodytext.length; i<length; i++)
     {
-        bodytext[i].style.backgroundColor="white";
+        bodytext[i].style.backgroundColor="#fff2e6";
         bodytext[i].style.color="black";
     }
 
