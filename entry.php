@@ -30,7 +30,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="./about.html" class="menulink">about us</a>
 </div>
-<div class="main">
+<div style="margin-left=300px;" class="main">
   <?php
     require 'db.php';
     if(isset($_GET['movie']))
@@ -56,7 +56,7 @@
 
             # opportunity for styling these pices of info
             echo '<h1>' . $title . " (" . $year . ')</h1>';
-            echo '<a class=\'bloglink\' style=\'float: right;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
+            echo '<a class=\'bloglink\' style=\'float: left;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a>';
             break; # just in case of multiples or infinite loops...
           }
 
@@ -66,7 +66,7 @@
       }
       if ($actors != 'null') {
         // echo "<h3>Leading actors: " . $actors . "</h3>";
-        echo "<h3>Leading actors: ";
+        echo "<h3>&nbsp;&nbsp;&nbsp;&nbsp;Leading actors: ";
         $actorArray = explode(",", $actors);
         for ($i = 0; $i < count($actorArray); $i++) {
             $actor = $actorArray[$i];
@@ -81,7 +81,7 @@
       }
       if ($genres != 'null') {
         // echo "<h3>Tagged genres: " . $genres . "</h3>";
-        echo "<h3>Tagged genres: ";
+        echo "<h3>&nbsp;&nbsp;&nbsp;&nbsp;Tagged genres: ";
         $genreArray = explode(",", $genres);
         for ($i = 0; $i < count($genreArray); $i++) {
             $genre = $genreArray[$i];
@@ -96,9 +96,9 @@
       }
 
       if ($dur != 'null')
-        echo "<h3>Duration: " . $dur . "</h3>";
+        echo "<h3>&nbsp;&nbsp;&nbsp;&nbsp;Duration: " . $dur . "</h3>";
 
-      echo "<h4>Synopsis: " . $blurb . "</h4>";
+      echo "<h4>&nbsp;&nbsp;&nbsp;&nbsp;Synopsis: " . $blurb . "</h4>";
       
       try {
         $sql = "SELECT AVG(rating) AS avgRating FROM reviews WHERE movie='$sqlMovie'";
@@ -114,36 +114,27 @@
 
       echo "</br><strong>Enter your review below:</strong></br></br>";
       echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\" method=\"get\" style=\"font-weight: bold;\">";
-      echo "<input type=\"hidden\" name=\"movie\" value=\"$sqlMovie\">";
+      echo "<input class=\"input\" type=\"hidden\" name=\"movie\" value=\"$sqlMovie\">";
       echo "Name: &nbsp;";
-      echo "<input type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
+      echo "<input class=\"input\" type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
       echo "</br>";
       echo "Rating: &nbsp;";
-      echo "<input type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
+      echo "<input class=\"input\" type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
       echo "</br>";
-      echo "<input type=\"text\" name=\"data\" style=\"width: 600px; height: 200px;\" maxlength=\"500\" required>";
+      echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 600px; height: 200px;\" maxlength=\"500\" required>";
       echo "</br>";
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
 
-      echo "</br></br></br><strong>Previous reviews: </strong> </br></br>";
+      echo "</br></br></br><strong>Previous review: </strong> </br>";
   
       // print out all of the current ratings in html format
       try {
         $sqlSelect = "SELECT name,rating,comment FROM reviews where movie='$sqlMovie'";
         $stmt = $db->query($sqlSelect);
+        $comments = $stmt->fetchAll(PDO::FETCH_OBJ);
         
-        foreach ($stmt as $comment) {
-          echo "<div style=\"border-style: groove; padding: 10px;\">";
-          echo "<strong>Name: &nbsp </strong>";
-          echo $comment['name'];
-          echo "</br>";
-          echo "<strong>Rating: &nbsp</strong>";
-          echo $comment['rating'];
-          echo "</br><strong>Comment:&nbsp</strong>";
-          echo $comment['comment'];
-          echo "</div></br>";
-        }
+        echo  json_encode($comments);
       } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
       }
