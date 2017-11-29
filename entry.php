@@ -126,15 +126,24 @@
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
 
-      echo "</br></br></br><strong>Previous review: </strong> </br>";
+      echo "</br></br></br><strong>Previous reviews: </strong> </br></br>";
   
       // print out all of the current ratings in html format
       try {
         $sqlSelect = "SELECT name,rating,comment FROM reviews where movie='$sqlMovie'";
         $stmt = $db->query($sqlSelect);
-        $comments = $stmt->fetchAll(PDO::FETCH_OBJ);
         
-        echo  json_encode($comments);
+        foreach ($stmt as $comment) {
+          echo "<div style=\"border-style: groove; padding: 10px;\">";
+          echo "<strong>Name: &nbsp </strong>";
+          echo $comment['name'];
+          echo "</br>";
+          echo "<strong>Rating: &nbsp</strong>";
+          echo $comment['rating'];
+          echo "</br><strong>Comment:&nbsp</strong>";
+          echo $comment['comment'];
+          echo "</div></br>";
+        }
       } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
       }
