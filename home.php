@@ -41,7 +41,7 @@
 require 'db.php';
       try {
           $db = getDB();
-          $sql ="SELECT * FROM reviews ORDER BY RAND() LIMIT 3";
+          $sql ="SELECT DISTINCT * FROM reviews ORDER BY RAND() LIMIT 3";
           $stmt = $db->query($sql);
 
       foreach ($stmt as $comment){
