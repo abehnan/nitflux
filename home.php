@@ -35,13 +35,13 @@
   <div id="main" class="main">
     </br>
     <h2> Welcome To NitFlux! </h2>
-    <h3> Here are some user's reviews: </h3>
+    <h3> Here are some of our user reviews: </h3>
     </br>
 <?php
 require 'db.php';
       try {
           $db = getDB();
-          $sql ="SELECT * FROM reviews ORDER BY RAND() LIMIT 1";
+          $sql ="SELECT * FROM reviews ORDER BY RAND() LIMIT 3";
           $stmt = $db->query($sql);
 
       foreach ($stmt as $comment){
