@@ -51,7 +51,7 @@ require 'db.php';
         $query->execute();
         while($result = $query->fetch(PDO::FETCH_BOTH)){
 
-        echo "<div style=\"border-style: groove; padding: 10px;\">";
+        echo "<div style=\"border-style: groove; padding: 1%;\">";
         echo '<a class=\'bloglink\' style=\'float: right;\' href=\'' .
         $result['page'] . '\'>' . '<img src=\''. $result['img'] . '\'
         style="width:150px;height:85px;"></a><br/>';
