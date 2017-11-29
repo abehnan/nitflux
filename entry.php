@@ -126,24 +126,31 @@
       echo "<input type=\"submit\" style=\"width: 30%;\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
 
-      echo "</br></br></br><strong>Previous reviews: </strong> </br></br>";
+      
   
       // print out all of the current ratings in html format
       try {
         $sqlSelect = "SELECT name,rating,comment FROM reviews where movie='$sqlMovie'";
         $stmt = $db->query($sqlSelect);
         
-        foreach ($stmt as $comment) {
-          echo "<div style=\"border-style: groove; padding: 10px;\">";
-          echo "<strong>Name: &nbsp </strong>";
-          echo $comment['name'];
-          echo "</br>";
-          echo "<strong>Rating: &nbsp</strong>";
-          echo $comment['rating'];
-          echo "</br><strong>Comment:&nbsp</strong>";
-          echo $comment['comment'];
-          echo "</div></br>";
+        if ($stmt->rowCount() == 0) {
+          echo "</br></br></br><strong> No previous reviews. </strong> </br></br>";
         }
+        else {
+          echo "</br></br></br><strong>Previous reviews: </strong> </br></br>";
+          foreach ($stmt as $comment) {
+            echo "<div style=\"border-style: groove; padding: 10px;\">";
+            echo "<strong>Name: &nbsp </strong>";
+            echo $comment['name'];
+            echo "</br>";
+            echo "<strong>Rating: &nbsp</strong>";
+            echo $comment['rating'];
+            echo "</br><strong>Comment:&nbsp</strong>";
+            echo $comment['comment'];
+            echo "</div></br>";
+          }
+        }
+        
       } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
       }
