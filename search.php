@@ -59,7 +59,6 @@
   <input class="mybutton" type="submit" value="Search!">
 </form></span></div>
 
-
 <?php 
   if(isset($_GET['actor'])) {
     echo "<h1>Actor search results for: " . $_GET['actor'] . "</h1>";

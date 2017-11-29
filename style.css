@@ -75,7 +75,7 @@ a.menulink {
 }
 
 a.bloglink {
-    color: purple;
+    color: mediumorchid;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -101,7 +101,7 @@ a.loginlink:hover {
 a.bloglink:active,
 a.menulink:active
 a.loginlink:active {
-    color: slateblue;
+    color: mediumorchid;
 }
 
 

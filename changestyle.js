@@ -94,6 +94,12 @@ function switchDark()
         main[i].style.color="#99ccff";
     }
 
+    //bloglinks
+    var bloglinks = document.getElementsByClassName('bloglink');
+    for (var i = 0, length = bloglinks.length; i < length; i++) {
+        bloglinks[i].style.color = "mediumorchid";
+    }
+
     //input fields
    var input = document.getElementsByClassName('input');
    for (var i = 0, length = input.length; i < length; i++)
@@ -160,16 +166,16 @@ function switchLight()
     }
 
     //bloglinks
-    var bloglinks = document.getElementsByClassName('a.bloglink');
-    for (var i = 0, length = bodytext.length; i < length; i++) {
-        bloglinks[i].style.color = "black";
+    var bloglinks = document.getElementsByClassName('bloglink');
+    for (var i = 0, length = bloglinks.length; i < length; i++) {
+        bloglinks[i].style.color = "mediumorchid";
     }
     
     //Main
     var main = document.getElementsByClassName('main');
     {
-        main[i].style.backgroundColor ="#fff2e6";
-        main[i].style.color="black";
+        main[0].style.backgroundColor ="#fff2e6";
+        main[0].style.color="black";
     }
 
     var input = document.getElementsByClassName('input');
