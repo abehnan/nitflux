@@ -56,7 +56,7 @@
 
             # opportunity for styling these pices of info
             echo '<h1>' . $title . " (" . $year . ')</h1>';
-            echo '<a class=\'bloglink\' style=\'float: left;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a>';
+            echo '<a class=\'bloglink\' style=\'float: right; padding: 1%;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
             break; # just in case of multiples or infinite loops...
           }
 
@@ -121,7 +121,7 @@
       echo "Rating: &nbsp;";
       echo "<input class=\"input\" type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
       echo "</br>";
-      echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 600px; height: 200px;\" maxlength=\"500\" required>";
+      echo "<input type=\"text\" name=\"data\" style=\"width: 90%; height: 200px;\" maxlength=\"500\" required>";
       echo "</br>";
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
