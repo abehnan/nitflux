@@ -4,6 +4,16 @@ body {
     background-color: #fff2e6;
 
 }
+.column-left{ float: left; width: 33%; }
+.column-right{ float: right; width: 33%; }
+.column-center{ display: inline-block; width: 33%; }
+input{
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color:  #ffd6b3;
+}
 
 .loginbar {
     background-color: rgb(167, 78, 0);

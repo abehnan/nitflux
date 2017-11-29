@@ -34,8 +34,32 @@
 </div>
 
 <div id="titles" class="main">
-<h4>Element to make: search by actor or genre (from drop-down form)
-text entry, search/submit button.</h4>
+
+<div class="column-left">
+<span><h4>Search By Actor:</h4>
+<form action="search.php" method="GET">
+  <input class="input" type="text" name="actor" >
+  <br>
+  <input class="mybutton" type="submit" value="Search!">
+</form></div>
+
+<div class="column-center">
+<h4>Search By Genre:</h4>
+<form action="search.php" method="GET">
+  <input class="input" type="text" name="genre" >
+  <br>
+  <input class="mybutton" type="submit" value="Search!">
+</form></span></div>
+
+<div class="column-right">
+<h4>Search By Title:</h4>
+<form action="entry.php" method="GET">
+  <input class="input" type="text" name="movie" >
+  <br>
+  <input class="mybutton" type="submit" value="Search!">
+</form></span></div>
+
+
 <?php 
   if(isset($_GET['actor'])) {
     echo "<h1>Actor search results for: " . $_GET['actor'] . "</h1>";

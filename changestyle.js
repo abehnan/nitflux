@@ -87,18 +87,27 @@ function switchDark()
         bodytext[i].style.color="#99ccff";
     }
 
-        // this breaks the theme switch
-    // var bloglinks = document.getElementsByClassName('bloglink');
-    // for (var i = 0, length = titlebars.length; i < length; i++) {
-    //     bloglinks[i].style.color = "#ffb3b3";
-    // }
-
     //Main
     var main = document.getElementsByClassName('main');
     {
         main[i].style.backgroundColor="#202020";
         main[i].style.color="#99ccff";
     }
+
+    //input fields
+   var input = document.getElementsByClassName('input');
+   for (var i = 0, length = input.length; i < length; i++)
+   {
+       input[i].style.backgroundColor="#707070";
+       input[i].style.color="#ffb3b3";
+   }
+
+   document.getElementById('titles').backgroundColor="#202020";
+    // //this breaks the theme switch
+    // var bloglinks = document.getElementsByClassName('bloglink');
+    // for (var i = 0, length = titlebars.length; i < length; i++) {
+    //     bloglinks[i].style.color = "#ffb3b3";
+    // }
 };
 
 function switchLight()
@@ -150,11 +159,11 @@ function switchLight()
         bodytext[i].style.color="black";
     }
 
-    // bloglinks
-    // var bloglinks = document.getElementsByClassName('bloglink');
-    // for (var i = 0, length = bodytext.length; i < length; i++) {
-    //     bloglinks[i].style.color = "black";
-    // }
+    //bloglinks
+    var bloglinks = document.getElementsByClassName('a.bloglink');
+    for (var i = 0, length = bodytext.length; i < length; i++) {
+        bloglinks[i].style.color = "black";
+    }
     
     //Main
     var main = document.getElementsByClassName('main');
@@ -162,4 +171,13 @@ function switchLight()
         main[i].style.backgroundColor ="#fff2e6";
         main[i].style.color="black";
     }
+
+    var input = document.getElementsByClassName('input');
+    for (var i = 0, length = input.length; i < length; i++)
+    {
+        input[i].style.backgroundColor="#ffd6b3";
+        input[i].style.color="black";
+    }
+
+
 }

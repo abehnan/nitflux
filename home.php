@@ -53,7 +53,8 @@ require 'db.php';
 
         echo "<div style=\"border-style: groove; padding: 10px;\">";
         echo '<a class=\'bloglink\' style=\'float: right;\' href=\'' .
-        $result['page'] . '\'>' . '<img src=\''. $result['img'] . '\'></a><br/>';
+        $result['page'] . '\'>' . '<img src=\''. $result['img'] . '\'
+        style="width:150px;height:85px;"></a><br/>';
         echo "<strong>Name: &nbsp </strong>";
         echo $comment['name'];
         echo "</br>";

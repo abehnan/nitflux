@@ -3323,12 +3323,11 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`name`, `rating`, `comment`, `movie`) VALUES
-('Wierd Al Yankovic', 8.8, 'This guy is BRILLIANT! We gotta collaborate some day!', 'COMP307: The Musical'),
+('Wierd Al Yankovic', 8, 'This guy is BRILLIANT! We gotta collaborate some day!', 'COMP307: The Musical'),
 ('Mel Gibson', 10, 'What a host, funnier than Daddie\'s Home 2! I have to say this because we\'re dating.', 'Chelsea'),
 ('Jack Black', 7, 'The original inspiration for School of Rock. Couldn\'t have don it without you, Joe!', 'COMP307: The Musical'),
 ('Jimbo86', 9, 'Best series I ever watched. Superb character development and story arcs. Cannot wait for more!', 'Orange Is The New Black'),
-('GalacticaFan<3<3', 8.5, 'omg, Katee Sackhoff is in this!!! Pretty good show too. Sheriff Walt is a real cool dude.', 'Longmire'),
-
+('GalacticaFan<3<3', 8, 'omg, Katee Sackhoff is in this!!! Pretty good show too. Sheriff Walt is a real cool dude.', 'Longmire');
 --
 -- Indexes for dumped tables
 --
