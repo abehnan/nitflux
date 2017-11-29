@@ -7,23 +7,24 @@
     $app = new \Slim\App;
     $app->get('/users','getUsers');
     $app->get('/addComment', 'addComment');
+    $app->get('/randomComments', 'randomComments');
     $app->get('/populateGenreTable', 'populateGenreTable');
     $app->get('/populateActorTable', 'populateActorTable');
     $app->run();
 
     // call: localhost/nitflux/addComment (using GET method)
     function addComment(Request $request) {
-        
+
         // insert the comment into the database
         try {
 
             $db = getDB();
             $userInput = $request->getQueryParams();
-            $sqlInsert = 
+            $sqlInsert =
                 "INSERT INTO reviews(name, rating, comment, movie) VALUES ('" .
                 addslashes($userInput['reviewer']) . "','" .
-                addslashes($userInput['rating']) . "','" . 
-                addslashes($userInput['data']) . "','" . 
+                addslashes($userInput['rating']) . "','" .
+                addslashes($userInput['data']) . "','" .
                 addslashes($userInput['movie']) . "')";
 
             $stmt = $db->prepare($sqlInsert);
@@ -48,6 +49,29 @@
         } catch(PDOException $e) {
             echo '{"error":{"text":'. $e->getMessage() .'}}';
         }
+    }
+
+    # trying to print comments
+    function randomComments(){
+      try {
+          $db = getDB();
+          $sql ="SELECT * FROM reviews ORDER BY RAND() LIMIT 1";
+          $stmt = $db->query($sql);
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+      foreach ($stmt as $comment){
+        echo "<div style=\"border-style: groove; padding: 10px;\">";
+        echo "<strong>Name: &nbsp </strong>";
+        echo $comment['name'];
+        echo "</br>";
+        echo "<strong>Rating: &nbsp</strong>";
+        echo $comment['rating'];
+        echo "</br><strong>Comment:&nbsp</strong>";
+        echo $comment['comment'];
+        echo "</div></br>";
+      }
+
     }
 
     function populateGenreTable(Request $request) {
@@ -75,11 +99,11 @@
                         $db->query($sql);
                     } catch(PDOException $e) {
                         echo 'Error: '. $e->getMessage() .'<br>';
-                    } 
-                } 
+                    }
+                }
             }
         }
-        $db = null;        
+        $db = null;
     }
 
     function populateActorTable(Request $request) {
@@ -107,11 +131,11 @@
                         $db->query($sql);
                     } catch(PDOException $e) {
                         echo 'Error: '. $e->getMessage() .'<br>';
-                    } 
-                } 
+                    }
+                }
             }
         }
-        $db = null;        
+        $db = null;
     }
 
 ?>

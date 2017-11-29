@@ -99,7 +99,7 @@
         echo "<h3>Duration: " . $dur . "</h3>";
 
       echo "<h4>Synopsis: " . $blurb . "</h4>";
-      
+
       try {
         $sql = "SELECT AVG(rating) AS avgRating FROM reviews WHERE movie='$sqlMovie'";
         $stmt = $db->query($sql);
@@ -126,13 +126,13 @@
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
 
-      echo "</br></br></br><strong>Previous reviews: </strong> </br></br>";
-  
+      echo "</br></br><strong>Previous review: </strong> </br></br>";
+
       // print out all of the current ratings in html format
       try {
         $sqlSelect = "SELECT name,rating,comment FROM reviews where movie='$sqlMovie'";
         $stmt = $db->query($sqlSelect);
-        
+
         foreach ($stmt as $comment) {
           echo "<div style=\"border-style: groove; padding: 10px;\">";
           echo "<strong>Name: &nbsp </strong>";

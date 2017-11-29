@@ -3323,18 +3323,11 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`name`, `rating`, `comment`, `movie`) VALUES
-('1', 1, '1', '3%'),
-('1', 1, '1', 'Aziz'),
-('11', 1, '1', '3%'),
-('afsdf', 3, 'f45454545', ''),
-('asdf', 2, 'asdfasdfasdf', ''),
-('1', 1, '1', 'Aziz'),
-('1', 1, '1', 'Aziz'),
-('1', 1, '1', 'Aziz'),
-('test', 8, 'test8', 'Aziz'),
-('1', 1, '1', 'Aziz Ansari: Buried Alive'),
-('3', 3, '3', 'Aziz Ansari: Buried Alive'),
-('1922', 2, 'great movie', '1922');
+('Wierd Al Yankovic', 8.8, 'This guy is BRILLIANT! We gotta collaborate some day!', 'COMP307: The Musical'),
+('Mel Gibson', 10, 'What a host, funnier than Daddie\'s Home 2! I have to say this because we\'re dating.', 'Chelsea'),
+('Jack Black', 7, 'The original inspiration for School of Rock. Couldn\'t have don it without you, Joe!', 'COMP307: The Musical'),
+('Jimbo86', 9, 'Best series I ever watched. Superb character development and story arcs. Cannot wait for more!', 'Orange Is The New Black'),
+('GalacticaFan<3<3', 8.5, 'omg, Katee Sackhoff is in this!!! Pretty good show too. Sheriff Walt is a real cool dude.', 'Longmire'),
 
 --
 -- Indexes for dumped tables
