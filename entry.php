@@ -121,7 +121,7 @@
       echo "Rating: &nbsp;";
       echo "<input class=\"input\" type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
       echo "</br>";
-      echo "<input type=\"text\" name=\"data\" style=\"width: 90%; height: 200px;\" maxlength=\"500\" required>";
+      echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 90%; height: 200px;\" maxlength=\"500\" required>";
       echo "</br>";
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
