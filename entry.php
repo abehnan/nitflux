@@ -98,13 +98,8 @@
       if ($dur != 'null')
         echo "<h3>&nbsp;&nbsp;&nbsp;&nbsp;Duration: " . $dur . "</h3>";
 
-<<<<<<< HEAD
-      echo "<h4>Synopsis: " . $blurb . "</h4>";
-
-=======
       echo "<h4>&nbsp;&nbsp;&nbsp;&nbsp;Synopsis: " . $blurb . "</h4>";
       
->>>>>>> 225b27b41535a8cdfda9887020209a544c3c34f8
       try {
         $sql = "SELECT AVG(rating) AS avgRating FROM reviews WHERE movie='$sqlMovie'";
         $stmt = $db->query($sql);
@@ -131,35 +126,15 @@
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
 
-<<<<<<< HEAD
-      echo "</br></br><strong>Previous review: </strong> </br></br>";
-
-=======
       echo "</br></br></br><strong>Previous review: </strong> </br>";
   
->>>>>>> 225b27b41535a8cdfda9887020209a544c3c34f8
       // print out all of the current ratings in html format
       try {
         $sqlSelect = "SELECT name,rating,comment FROM reviews where movie='$sqlMovie'";
         $stmt = $db->query($sqlSelect);
-<<<<<<< HEAD
-
-        foreach ($stmt as $comment) {
-          echo "<div style=\"border-style: groove; padding: 10px;\">";
-          echo "<strong>Name: &nbsp </strong>";
-          echo $comment['name'];
-          echo "</br>";
-          echo "<strong>Rating: &nbsp</strong>";
-          echo $comment['rating'];
-          echo "</br><strong>Comment:&nbsp</strong>";
-          echo $comment['comment'];
-          echo "</div></br>";
-        }
-=======
         $comments = $stmt->fetchAll(PDO::FETCH_OBJ);
         
         echo  json_encode($comments);
->>>>>>> 225b27b41535a8cdfda9887020209a544c3c34f8
       } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
       }
