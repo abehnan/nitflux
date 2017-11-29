@@ -56,7 +56,7 @@
 
             # opportunity for styling these pices of info
             echo '<h1>' . $title . " (" . $year . ')</h1>';
-            echo '<a class=\'bloglink\' style=\'float: right;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
+            echo '<a class=\'bloglink\' style=\'float: right; padding: 1%;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
             break; # just in case of multiples or infinite loops...
           }
 
