@@ -31,19 +31,12 @@
             $stmt->execute();
             $db = null;
             $movie = print_r($userInput['movie'], true);
-            // $htmlFormatMovie = htmlentities($userInput['movie']);
             $urlMovieName = urlencode($movie);
-
-            //debug
-            // echo '$userInput[movie]: ' . $userInput['movie'];
-            // echo "</br>";
-            // echo '$htmlFormatMovie: ' . $htmlFormatMovie;
-            // echo "</br>";
-            // echo  'urlencode($movie): ' . urlencode($movie);
 
             // redirect to the page that called the function
             ob_start();
-            header('Location: http://localhost/nitflux/entry.php?movie=' . $urlMovieName . "&submit=" . $urlMovieName);
+            header('Location: http://localhost/nitflux/entry.php?movie='
+            . $urlMovieName . "&submit=" . $urlMovieName);
             ob_end_flush();
             die();
         } catch(PDOException $e) {
@@ -55,7 +48,7 @@
     function randomComments(){
       try {
           $db = getDB();
-          $sql ="SELECT * FROM reviews ORDER BY RAND() LIMIT 1";
+          $sql ="SELECT DISTINCT * FROM reviews ORDER BY RAND() LIMIT 3";
           $stmt = $db->query($sql);
         } catch(PDOException $e) {
             echo '{"error":{"text":'. $e->getMessage() .'}}';

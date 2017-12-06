@@ -59,7 +59,7 @@
   <input class="mybutton" type="submit" value="Search!">
 </form></span></div>
 
-<?php 
+<?php
   if(isset($_GET['actor'])) {
     echo "<h1>Actor search results for: " . $_GET['actor'] . "</h1>";
   }
@@ -94,19 +94,13 @@
     }
     foreach ($stmt as $row) {
       $movie = $row['name'];
-      // add slashes for special characters
-      // transform string containing comma seperated values into array
-      // echo "
-      // <form method=\"get\" action=\"./entry.php\">
-      // <input type=\"hidden\" name=\"title\" value=\"$movie\">
-      // <input type=\"submit\" name=\"submit\" value=\"$movie\">
-      // </form>
-      // ";
+
       $urlMovie = urlencode($movie);
-      echo "<li><a class=\"bloglink\" href=\"http://localhost/nitflux/entry.php?movie=" . $urlMovie . "\">" .  $movie . "</a></li>";
+      echo "<li><a class=\"bloglink\" href=\"http://localhost/nitflux/entry.php?movie="
+       . $urlMovie . "\">" .  $movie . "</a></li>";
     }
     $db = null;
-  ?></ul>  
+  ?></ul>
 </div>
 </body>
 </html>

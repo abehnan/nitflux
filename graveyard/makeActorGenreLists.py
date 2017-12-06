@@ -2,6 +2,9 @@
 # Writes new json documents, actors.json and genres.json.
 # The json files can be converted to xml and put into our database.
 
+# This was not used, ultimately. Alex found a way to fill the database
+# from allInfo.json, not needing these new tables to link together.
+
 import json
 
 dctA = {}

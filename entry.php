@@ -31,18 +31,20 @@
   <a href="./about.html" class="menulink">about us</a>
 </div>
 <div class="main">
+
   <?php
     require 'db.php';
     if(isset($_GET['movie']))
     {
       $movie = $_GET["movie"];
+    # addslashes deals with unusual characters
       $sqlMovie = addslashes($movie);
       try {
         $db = getDB();
         $sql = "SELECT * FROM movies WHERE name='$sqlMovie'";
         $query = $db->prepare($sql);
         $query->execute();
-          # i don't know the details of fetch_both, but this does what I want
+    # i don't know the details of fetch_both, but it does what I want
           while($result = $query->fetch(PDO::FETCH_BOTH))
           {
             $img = $result['img'];
@@ -54,33 +56,32 @@
             $dur = $result['duration'];
             $year = $result['year'];
 
-            # opportunity for styling these pices of info
             echo '<h1>' . $title . " (" . $year . ')</h1>';
-            echo '<a class=\'bloglink\' style=\'float: right; padding: 1%;\' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
-            break; # just in case of multiples or infinite loops...
+            echo '<a class=\'bloglink\' style=\'float: right; padding: 1%;
+            \' href=\'' . $page . '\'>' . '<img src=\''. $img . '\'></a><br/>';
+            break; # only expect one result. just in case of multiples or infinite loops...
           }
 
         } catch(PDOException $e) {
           echo '{"error":{"text":'. $e->getMessage() .'}}';
         }
       }
+      # this field is not necessarily present
       if ($actors != 'null') {
-        // echo "<h3>Leading actors: " . $actors . "</h3>";
         echo "<h3>Leading actors: ";
         $actorArray = explode(",", $actors);
         for ($i = 0; $i < count($actorArray); $i++) {
             $actor = $actorArray[$i];
             $urlActor = urlencode($actor);
-            echo "<a class=\"bloglink\" href=\"http://localhost/nitflux/search.php?actor=" . $urlActor . "\">" .  $actor . "</a>";
-            // echo $urlActor;
-            // echo $actorArray[$i];
+            echo "<a class=\"bloglink\" href=\"http://localhost/nitflux/search.php?actor="
+             . $urlActor . "\">" .  $actor . "</a>";
             if ($i != count($actorArray)-1)
               echo ",";
         }
         echo "</h3>";
       }
-      if ($genres != 'null') {
-        // echo "<h3>Tagged genres: " . $genres . "</h3>";
+      # this field is not necessarily present
+      if ($genres != 'null')
         echo "<h3>Tagged genres: ";
         $genreArray = explode(",", $genres);
         for ($i = 0; $i < count($genreArray); $i++) {
@@ -94,12 +95,13 @@
         }
         echo "</h3>";
       }
-
+      # this field is not necessarily present
       if ($dur != 'null')
         echo "<h3>Duration: " . $dur . "</h3>";
 
       echo "<h4>Synopsis: " . $blurb . "</h4>";
-      
+
+      # gathers all ratings on the movie, computes Average:
       try {
         $sql = "SELECT AVG(rating) AS avgRating FROM reviews WHERE movie='$sqlMovie'";
         $stmt = $db->query($sql);
@@ -110,11 +112,12 @@
         }
       } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
-        
-      }
 
+      }
+      # html form, via php in order to include variable $sqlMovie
       echo "</br><strong>Enter your review below:</strong></br></br>";
-      echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\" method=\"get\" style=\"font-weight: bold;\">";
+      echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\"
+         method=\"get\" style=\"font-weight: bold;\">";
       echo "<input type=\"hidden\" name=\"movie\" value=\"$sqlMovie\">";
       echo "Name: &nbsp;";
       echo "<input type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
@@ -122,18 +125,19 @@
       echo "Rating: &nbsp;";
       echo "<input type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
       echo "</br>";
-      echo "<input type=\"text\" name=\"data\" style=\"width: 90%; height: 200px;\" maxlength=\"500\" required>";
+      echo "<input type=\"text\" name=\"data\" style=\"width: 90%; height: 200px;\"
+       maxlength=\"500\" required>";
       echo "</br>";
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
 
       echo "</br></br></br><strong>Previous reviews: </strong> </br></br>";
-  
-      // print out all of the current ratings in html format
+
+      // print out all of the current reviews in html format
       try {
         $sqlSelect = "SELECT name,rating,comment FROM reviews where movie='$sqlMovie'";
         $stmt = $db->query($sqlSelect);
-        
+
         foreach ($stmt as $comment) {
           echo "<div style=\"border-style: groove; padding: 10px;\">";
           echo "<strong>Name: &nbsp </strong>";

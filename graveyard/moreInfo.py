@@ -6,12 +6,11 @@ import json
 #   Netflix title recorded, to get as much descriptive
 #   data as possible
 
-
 x=1
 with open("jsonEntries.txt", 'r') as source:
     with open('allInfo.json', 'w') as dest:
 
-    # one film per line
+    # has one film per line
         for line in source:
             entry = json.loads(line)
             page = entry['page']
@@ -44,8 +43,10 @@ with open("jsonEntries.txt", 'r') as source:
     # handle the ~400 entries.
             print x
             x += 1
-            dct = {"year":year, "rating":rating, "duration":duration,
+    # json format for data
+            newer = {"year":year, "rating":rating, "duration":duration,
             "synopsis":synopsis, "actors":actors, "genres":genres}
-            entry.update(dct)
+    # updates/adds new fields to the json object held by 'entry'
+            entry.update(newer)
             json.dump(entry, dest)
             dest.write('\n')

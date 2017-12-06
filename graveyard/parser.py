@@ -7,13 +7,15 @@ from bs4 import BeautifulSoup
 import re
 
 # ImageLinks I got from copying the html of the 'originals' class tag from
-# https://www.netflix.com/ca/originals. Other methods did not provide the img links
+# https://www.netflix.com/ca/originals. urlopen methods did not provide the img links
+
 page_info = open("ImageLinks", "r")
 soup = BeautifulSoup(page_info.read(), "html.parser")
 
 fp = open("jsonEntries.txt", 'w')
 
-# the 'a' class tags contain the data of interest for each film
+# the 'a' class tags contain the data of interest for each film.
+# soup.findAll returns a list of all those 'a' tags
 elements = soup.findAll('a')
 
 for el in elements:
@@ -31,7 +33,7 @@ for el in elements:
     # We have written our info in JSON object format
     entry += match + '\" }\n'
 
-    # Write to textfile for storage. Newline between each object for clarity (possible issue?)
+    # Write to textfile for storage. Newline between each object for clarity
     # had a problem with a superscript charater, fixed with encode()
     fp.write(entry.encode('ascii', 'ignore'))
 
