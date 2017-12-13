@@ -118,7 +118,7 @@
       echo "</br><strong>Enter your review below:</strong></br></br>";
       echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\"
          method=\"get\" style=\"font-weight: bold;\">";
-      echo "<input type=\"hidden\" name=\"movie\" value=\"$sqlMovie\">";
+      echo "<input type=\"hidden\" name=\"movie\" value=\"$movie\">";
       echo "Name: &nbsp;";
       echo "<input type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
       echo "</br>";
