@@ -46,12 +46,13 @@ require 'db.php';
 
       foreach ($stmt as $comment){
         $y = $comment['movie'];
-        $sql2="SELECT * FROM `movies` WHERE name='$y' ";
+        $sqlMovie = addslashes($y);
+        $sql2="SELECT * FROM `movies` WHERE name='$sqlMovie' ";
         $query = $db->prepare($sql2);
         $query->execute();
         while($result = $query->fetch(PDO::FETCH_BOTH)){
 
-        echo "<div style=\"border-style: groove; padding: 1%;\">";
+        echo "<div style=\"border-style: groove; padding: 2%;\">";
         echo '<a class=\'bloglink\' style=\'float: right;\' href=\'' .
         $result['page'] . '\'>' . '<img src=\''. $result['img'] . '\'
         style="width:150px;height:85px;"></a><br/>';

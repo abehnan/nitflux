@@ -82,15 +82,15 @@
       $db = getDB();
       if(isset($_GET['actor'])) {
         $actor = addslashes($_GET['actor']);
-        $sql = "SELECT name FROM actors WHERE actor LIKE '%" . $actor . "%' ORDER by name";
+        $sql = "SELECT DISTINCT name FROM actors WHERE actor LIKE '%" . $actor . "%' ORDER by name";
       }
       else if (isset($_GET['genre'])) {
         $genre = addslashes($_GET['genre']);
-        $sql = "SELECT name FROM genres WHERE genre LIKE '%" . $genre . "%' ORDER by name";
+        $sql = "SELECT DISTINCT name FROM genres WHERE genre LIKE '%" . $genre . "%' ORDER by name";
       }
       else if (isset($_GET['movie'])) {
         $movie = addslashes($_GET['movie']);
-        $sql = "SELECT name FROM movies WHERE name LIKE '%" . $movie . "%' ORDER by name";
+        $sql = "SELECT DISTINCT name FROM movies WHERE name LIKE '%" . $movie . "%' ORDER by name";
       }
       else {
         $sql = "SELECT name FROM movies";
