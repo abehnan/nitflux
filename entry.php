@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src ="changestyle.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body onload="checkCookie()">
@@ -117,7 +118,7 @@
       # html form, via php in order to include variable $sqlMovie
       echo "</br><strong>Enter your review below:</strong></br></br>";
       echo "<form name=\"comment\" action=\"http://localhost/nitflux/addComment\"
-         method=\"get\" style=\"font-weight: bold;\">";
+         method=\"post\" style=\"font-weight: bold;\">";
       echo "<input class=\"input\" type=\"hidden\" name=\"movie\" value=\"$movie\">";
       echo "Name: &nbsp;";
       echo "<input class=\"input\" type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
@@ -127,6 +128,9 @@
       echo "</br>";
       echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 90%; height: 200px;\"
        maxlength=\"500\" required>";
+      
+      echo "</br>";
+      echo '<div class="g-recaptcha" data-sitekey="6Lcl0DwUAAAAANoiJSKE6wqNIWHXxGlTLmrQXQTu"></div>';
       echo "</br>";
       echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
       echo "</form>";
