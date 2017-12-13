@@ -81,7 +81,7 @@
         echo "</h3>";
       }
       # this field is not necessarily present
-      if ($genres != 'null')
+      if ($genres != 'null') {
         echo "<h3>Tagged genres: ";
         $genreArray = explode(",", $genres);
         for ($i = 0; $i < count($genreArray); $i++) {
