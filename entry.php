@@ -11,11 +11,11 @@
     Themes:
     <button type="button" class="mybutton" onclick="switchLight()">Light</button>
     <button type="button" class="mybutton" onclick="switchDark()">Dark</button>
-    <span style="float:right">
+    <!-- <span style="float:right">
       Welcome to Nitflux!
       <a class="loginlink" href="https://i.ytimg.com/vi/e9FM-FkDeWs/maxresdefault.jpg">Login</a>
       <a class="loginlink" href="https://i.ytimg.com/vi/e9FM-FkDeWs/maxresdefault.jpg">Sign Up</a>
-    </span>
+    </span> -->
   </div>
 
 <div id="titlebar" class="titlebar">
