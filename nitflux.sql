@@ -2840,7 +2840,7 @@ INSERT INTO `genres` (`genre`, `name`) VALUES
 
 CREATE TABLE `movies` (
   `rating` varchar(16) NOT NULL,
-  `genres` varchar(100) NOT NULL,
+  `genres` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
   `img` varchar(100) NOT NULL,
   `synopsis` varchar(300) NOT NULL,
