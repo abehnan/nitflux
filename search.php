@@ -53,7 +53,7 @@
 
 <div class="column-right">
 <h4>Search By Title:</h4>
-<form action="entry.php" method="GET">
+<form action="search.php" method="GET">
   <input class="input" type="text" name="movie" >
   <br>
   <input class="mybutton" type="submit" value="Search!">
@@ -65,6 +65,9 @@
   }
   else if (isset($_GET['genre'])) {
     echo "<h1>Genre search results for: " . $_GET['genre'] . "</h1>";
+  }
+  else if (isset($_GET['movie'])) {
+    echo "<h1>Movie search results for: " . $_GET['movie'] . "</h1>";
   }
   else {
     echo "<h1>All titles sorted alphabetically</h1>";
@@ -79,11 +82,15 @@
       $db = getDB();
       if(isset($_GET['actor'])) {
         $actor = addslashes($_GET['actor']);
-        $sql = "SELECT name FROM actors WHERE actor=\"$actor\"";
+        $sql = "SELECT name FROM actors WHERE actor LIKE '%" . $actor . "%'";
       }
       else if (isset($_GET['genre'])) {
         $genre = addslashes($_GET['genre']);
-        $sql = "SELECT name FROM genres WHERE genre=\"$genre\"";
+        $sql = "SELECT name FROM genres WHERE genre LIKE '%" . $genre . "%'";
+      }
+      else if (isset($_GET['movie'])) {
+        $movie = addslashes($_GET['movie']);
+        $sql = "SELECT name FROM movies WHERE name LIKE '%" . $movie . "%'";
       }
       else {
         $sql = "SELECT name FROM movies";
