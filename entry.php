@@ -121,12 +121,12 @@
          method=\"post\" style=\"font-weight: bold;\">";
       echo "<input class=\"input\" type=\"hidden\" name=\"movie\" value=\"$movie\">";
       echo "Name: &nbsp;";
-      echo "<input class=\"input\" type=\"text\" name=\"reviewer\" maxlength=\"16\" required>";
+      echo "<input class=\"input\" type=\"text\" style=\"width: 30%;\" name=\"reviewer\" maxlength=\"16\" required>";
       echo "</br>";
       echo "Rating: &nbsp;";
-      echo "<input class=\"input\" type=\"number\" name=\"rating\" max=\"10\" min=\"1\" required>";
+      echo "<input class=\"input\" type=\"number\" style=\"width: 10%;\" name=\"rating\" max=\"10\" min=\"1\" required>";
       echo "</br>";
-      echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 90%; height: 200px;\"
+      echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 60%; height: 200px;\"
        maxlength=\"500\" required>";
       
       echo "</br>";
