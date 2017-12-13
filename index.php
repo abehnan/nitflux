@@ -44,7 +44,7 @@
                     // redirect to the page that called the function
                     ob_start();
                     header('Location: http://localhost/nitflux/entry.php?movie='
-                    . $urlMovieName . "&submit=" . $urlMovieName);
+                    . $urlMovieName);
                     ob_end_flush();
                     die();
                 } catch(PDOException $e) {

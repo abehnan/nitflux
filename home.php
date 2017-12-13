@@ -50,11 +50,13 @@ require 'db.php';
         $sql2="SELECT * FROM `movies` WHERE name='$sqlMovie' ";
         $query = $db->prepare($sql2);
         $query->execute();
+        $urlMovie = urlencode($y);
         while($result = $query->fetch(PDO::FETCH_BOTH)){
 
         echo "<div style=\"border-style: groove; padding: 2%;\">";
-        echo '<a class=\'bloglink\' style=\'float: right;\' href=\'' .
-        $result['page'] . '\'>' . '<img src=\''. $result['img'] . '\'
+        echo '<a class=\'bloglink\' style=\'float: right;\' href=\' 
+        http://localhost/nitflux/entry.php?movie=' .
+        $urlMovie . '\'>' . '<img src=\''. $result['img'] . '\'
         style="width:150px;height:85px;"></a><br/>';
         echo "<strong>Name: &nbsp </strong>";
         echo $comment['name'];

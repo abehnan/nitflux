@@ -90,7 +90,7 @@
       }
       else if (isset($_GET['movie'])) {
         $movie = addslashes($_GET['movie']);
-        $sql = "SELECT DISTINCT name FROM movies WHERE name LIKE '%" . $movie . "%' ORDER by name";
+        $sql = "SELECT name FROM movies WHERE name LIKE '%" . $movie . "%' ORDER by name";
       }
       else {
         $sql = "SELECT name FROM movies";
