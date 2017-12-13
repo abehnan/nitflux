@@ -126,13 +126,13 @@
       echo "Rating: &nbsp;";
       echo "<input class=\"input\" type=\"number\" style=\"width: 10%;\" name=\"rating\" max=\"10\" min=\"1\" required>";
       echo "</br>";
-      echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 60%; height: 200px;\"
+      echo "<input class=\"input\" type=\"text\" name=\"data\" style=\"width: 60%; height: 300px;\"
        maxlength=\"500\" required>";
       
       echo "</br>";
       echo '<div class="g-recaptcha" data-sitekey="6Lcl0DwUAAAAANoiJSKE6wqNIWHXxGlTLmrQXQTu"></div>';
       echo "</br>";
-      echo "<input type=\"submit\" class=\"mybutton\" value=\"Submit\">";
+      echo "<input type=\"submit\"  class=\"mybutton\" style=\"width: 20%; height: 40px;\" value=\"Submit\">";
       echo "</form>";
 
       echo "</br></br></br><strong>Previous reviews: </strong> </br></br>";
